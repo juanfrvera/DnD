@@ -4,6 +4,9 @@ var atributos =
     'nombrePersonaje','clase','raza','alineacion','fondo','experiencia','nombreJugador',
     //--Cualidades
     'fuerza','destreza','constitucion','inteligencia','sabiduria','carisma',
+    //--Cualidades de salvación
+    'fuerzaSalvacion','destrezaSalvacion','constitucionSalvacion',
+    'inteligenciaSalvacion','sabiduriaSalvacion','carismaSalvacion',
     //--Personalizacion
     'edad','altura','peso','ojos','piel','cabello'
 ]
