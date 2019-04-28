@@ -1,7 +1,7 @@
 var inputsPrincipal =
 [
     //--Principales
-    'nombrePersonaje','clase','raza','alineacion','fondo','experiencia','nombreJugador',
+    'nombrePersonaje','clase','raza','alineacion','experiencia','nombreJugador',
     //--Cualidades
     'fuerza','destreza','constitucion','inteligencia','sabiduria','carisma',
     //--Cualidades de salvación
