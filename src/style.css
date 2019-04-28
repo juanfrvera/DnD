@@ -1,0 +1,11 @@
+div{
+    display:inline-block;
+    border: solid;
+    border-width: thin;
+
+    padding: 1em;
+}
+ul{
+    margin: 0;
+    padding: 0.5em;
+}
