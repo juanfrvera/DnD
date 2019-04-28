@@ -1,4 +1,4 @@
-var atributos = 
+var atributos =
 [
     //--Principales
     'nombrePersonaje','clase','raza','alineacion','fondo','experiencia','nombreJugador',
@@ -8,7 +8,9 @@ var atributos =
     'fuerzaSalvacion','destrezaSalvacion','constitucionSalvacion',
     'inteligenciaSalvacion','sabiduriaSalvacion','carismaSalvacion',
     //--Personalizacion
-    'edad','altura','peso','ojos','piel','cabello'
+    'edad','altura','peso','ojos','piel','cabello',
+    //--Historia
+    'Historia'
 ]
 
 //Cuando todos los elementos de la página fueron cargados
