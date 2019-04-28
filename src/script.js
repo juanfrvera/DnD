@@ -21,7 +21,7 @@ window.onbeforeunload = function(){
     atributos.forEach(function(nombre){Guardar(nombre)});
     return null;
 }
-
+//Prueba commit
 //------Funciones---------
 
 //Al input de id "nombre" le asigna el valor guardado con la clave "nombre"
