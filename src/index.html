@@ -3,6 +3,7 @@
     <head>
         <title>Dungeons & Dragons</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+    
         <script src="script.js"></script>
         <script src="principalScript.js"></script>
         <!--Los scripts tienen que estar en este orden ya que el segundo utiliza al primero-->
@@ -136,7 +137,20 @@
             </ul>
         </div>
 
+        <a href= "historia.html"> Click para ir a la Historia </a>
 
-        <a href= historia.html> Click para ir a la Historia </a>
+        <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCRhUMLNAbsRdRYA1btt6XQB0u_d8Di47M",
+            authDomain: "dungeonsanddragons-fe5eb.firebaseapp.com",
+            databaseURL: "https://dungeonsanddragons-fe5eb.firebaseio.com",
+            projectId: "dungeonsanddragons-fe5eb",
+            storageBucket: "dungeonsanddragons-fe5eb.appspot.com",
+            messagingSenderId: "417314382466"
+        };
+        firebase.initializeApp(config);
+        </script>
     </body>
 </html>
