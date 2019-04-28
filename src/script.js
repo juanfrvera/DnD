@@ -1,34 +1,4 @@
-var inputsPrincipal =
-[
-    //--Principales
-    'nombrePersonaje','clase','raza','alineacion','fondo','experiencia','nombreJugador',
-    //--Cualidades
-    'fuerza','destreza','constitucion','inteligencia','sabiduria','carisma',
-    //--Cualidades de salvación
-    'fuerzaSalvacion','destrezaSalvacion','constitucionSalvacion',
-    'inteligenciaSalvacion','sabiduriaSalvacion','carismaSalvacion',
-    //--Estado
-    'claseDeArmadura','iniciativa','velocidad','vidaMaxima','vidActual','hitDice',
-    //--Personalizacion
-    'edad','altura','peso','ojos','piel','cabello',
-]
-var inputsHistoria = 
-[
-    'Historia'
-]
-
-//Cuando todos los elementos de la página fueron cargados
-window.onload = function(){
-    inputsPrincipal.forEach(function(nombre){Cargar(nombre)});
-}
-
-//Al actualizar o cerrar la página
-window.onbeforeunload = function(){
-    inputsPrincipal.forEach(function(nombre){Guardar(nombre)});
-    return null;
-}
-//Prueba commit
-//------Funciones---------
+//Este es un script usado como libreria
 
 //Al input de id "nombre" le asigna el valor guardado con la clave "nombre"
 function Cargar(nombre){
