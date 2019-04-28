@@ -7,6 +7,8 @@ var atributos =
     //--Cualidades de salvación
     'fuerzaSalvacion','destrezaSalvacion','constitucionSalvacion',
     'inteligenciaSalvacion','sabiduriaSalvacion','carismaSalvacion',
+    //--Estado
+    'claseDeArmadura','iniciativa','velocidad','vidaMaxima','vidActual','hitDice',
     //--Personalizacion
     'edad','altura','peso','ojos','piel','cabello'
 ]
