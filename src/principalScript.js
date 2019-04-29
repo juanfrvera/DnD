@@ -1,7 +1,7 @@
-var inputsPrincipal =
+var inputs =
 [
     //--Principales
-    'nombrePersonaje','clase','raza','alineacion','experiencia','nombreJugador',
+    'nombrePersonaje','alineacion','experiencia','nombreJugador',
     //--Cualidades
     'fuerza','destreza','constitucion','inteligencia','sabiduria','carisma',
     //--Cualidades de salvación
@@ -12,14 +12,20 @@ var inputsPrincipal =
     //--Personalizacion
     'edad','altura','peso','ojos','piel','cabello'
 ]
+var selects =
+[
+    'clase', 'raza'
+]
 
 //Cuando todos los elementos de la página fueron cargados
 window.onload = function(){
-    inputsPrincipal.forEach(function(nombre){Cargar(nombre)});
+    inputs.forEach(function(nombre){Cargar(nombre)});
+    selects.forEach(function(nombre){Cargar(nombre)});
 }
 
 //Al actualizar o cerrar la página
 window.onbeforeunload = function(){
-    inputsPrincipal.forEach(function(nombre){Guardar(nombre)});
+    inputs.forEach(function(nombre){Guardar(nombre)});
+    selects.forEach(function(nombre){Guardar(nombre)});
     return null;
 }

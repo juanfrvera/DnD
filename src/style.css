@@ -1,5 +1,4 @@
 div{
-    display:inline-block;
     border: solid;
     border-width: thin;
 
@@ -8,6 +7,9 @@ div{
 ul{
     margin: 0;
     padding: 0.5em;
+}
+input{
+    width: 100%;
 }
 .importante{
     font-size: 1.5em;
@@ -24,3 +26,13 @@ textarea {
   resize  : none;
   overflow: auto;
 }
+
+/*Cuando la pantalla es grande (desktop)
+@media only screen and (min-width: 768px) {
+    input{
+        width: 100%;
+    }
+    div{
+        display:inline-block;
+    }
+}*/
