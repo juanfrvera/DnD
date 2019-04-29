@@ -25,7 +25,7 @@ window.onload = function(){
     inputs.forEach(function(nombre){Cargar(nombre)});
     selects.forEach(function(nombre){Cargar(nombre)});
     listaHabilidades = localStorage.getItem("listaHabilidades");
-    if(listaHabilidades.length > 0){
+    if(listaHabilidades != null && listaHabilidades.length > 0){
         listaHabilidades = listaHabilidades.split(",");
         EscribirHabilidades();
     }
