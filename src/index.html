@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
 
         <script src="script.js"></script>
-        <script src="principalScript.js"></script>
+        <script src="skills.js"></script>
         <!--Los scripts tienen que estar en este orden ya que el segundo utiliza al primero-->
     </head>
     <body>
@@ -110,6 +110,7 @@
 
         <div id="Habilidades">
             <h4>Habilidades</h4>
+            <button onclick="ElegirHabilidades()">Elegir</button>
             <ul>
                 <li>Acrobacias (Destreza)</li>
                 <li>Manejo de animales (Sabiduría)</li>
@@ -179,5 +180,7 @@
         };
         firebase.initializeApp(config);
         </script>
+
+        <script src="principalScript.js"></script>
     </body>
 </html>
