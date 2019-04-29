@@ -9,6 +9,8 @@ var inputs =
     'inteligenciaSalvacion','sabiduriaSalvacion','carismaSalvacion',
     //--Estado
     'claseDeArmadura','iniciativa','velocidad','vidaMaxima','vidaActual','hitDice',
+    //--Monedas
+    'monedasDeOro', 'monedasDePlata', 'monedasDeCobre',
     //--Personalizacion
     'edad','altura','peso','ojos','piel','cabello'
 ]
