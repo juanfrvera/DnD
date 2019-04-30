@@ -11,10 +11,10 @@
     </head>
     <body>
         <div id="Principal">
-            <h4>Principal</h4>
+            <h2>Principal</h2>
             <ul>
                 <li>Nombre del personaje</li>
-                <input id="nombrePersonaje" class="completo"/>
+                <input type="text" id="nombrePersonaje" class="completo"/>
                 <li>Raza</li>
                 <select id="raza">
                     <option value="draconico">Dracónico</option>
@@ -28,7 +28,7 @@
                     <option value="semiorco">Semi orco</option>
                 </select>
                 <li>Sub raza</li>
-                <input id="subraza"  class="completo"/>
+                <input type="text" id="subraza"  class="completo"/>
                 <li>Clase</li>
                 <select id="clase">
                     <option value="barbaro">Bárbaro</option>
@@ -46,126 +46,107 @@
                     
                 </select>
                 <li>Alineación</li>
-                <input id="alineacion"  class="completo"/>
+                <input type="text" id="alineacion"  class="completo"/>
                 <li>Puntos de experiencia</li>
-                <input id="experiencia"  class="completo"/>
+                <input type="number" id="experiencia"  class="completo"/>
                 <li>Nombre del jugador</li>
-                <input id="nombreJugador"  class="completo"/>
+                <input type="text" id="nombreJugador"  class="completo"/>
             </ul>
         </div>
-        <div id="Cualidades" class="importante">
-            <h4>Cualidades</h4>
+        <div id="Cualidades">
+            <h2>Cualidades</h2>
             <ul>
                 <li>Fuerza</li>
-                <input id="fuerza"/>
+                <input type="number" id="fuerza"/>
                 <li>Destreza</li>
-                <input id="destreza"/>
+                <input type="number" id="destreza"/>
                 <li>Constitución</li>
-                <input id="constitucion"/>
+                <input type="number" id="constitucion"/>
                 <li>Inteligencia</li>
-                <input id="inteligencia"/>
+                <input type="number" id="inteligencia"/>
                 <li>Sabiduría</li>
-                <input id="sabiduria"/>
+                <input type="number" id="sabiduria"/>
                 <li>Carisma</li>
-                <input id="carisma"/>
+                <input type="number" id="carisma"/>
             </ul>
         </div>
         Inspiración
         Bono de proeficiencia
         <div id="TiradasDeSalvacion">
-            <h4>Tiradas de salvación</h4>
+            <h2>Tiradas de salvación</h2>
             <ul>
                 <li>Fuerza</li>
-                <input id="fuerzaSalvacion"/>
+                <input type="number" id="fuerzaSalvacion"/>
                 <li>Destreza</li>
-                <input id="destrezaSalvacion"/>
+                <input type="number" id="destrezaSalvacion"/>
                 <li>Constitución</li>
-                <input id="constitucionSalvacion"/>
+                <input type="number" id="constitucionSalvacion"/>
                 <li>Inteligencia</li>
-                <input id="inteligenciaSalvacion"/>
+                <input type="number" id="inteligenciaSalvacion"/>
                 <li>Sabiduría</li>
-                <input id="sabiduriaSalvacion"/>
+                <input type="number" id="sabiduriaSalvacion"/>
                 <li>Carisma</li>
-                <input id="carismaSalvacion"/>
+                <input type="number" id="carismaSalvacion"/>
             </ul>
         </div>
         <div id="Estado">
+            <h2>Estado</h2>
             <ul>
                 <li>Clase de armadura</li>
                 <input id="claseDeArmadura"/>
                 <li>Iniciativa</li>
-                <input id="iniciativa"/>
+                <input type="number" id="iniciativa"/>
                 <li>Velocidad</li>
-                <input id="velocidad"/>
+                <input type="number" id="velocidad"/>
                 <li>Vida máxima</li>
-                <input id="vidaMaxima"/>
+                <input type="number" id="vidaMaxima"/>
                 <li>Vida actual</li>
-                <input id="vidaActual"/>
+                <input type="number" id="vidaActual"/>
                 <li>Hit dice</li>
-                <input id="hitDice"/>
+                <input type="number" id="hitDice"/>
                 <li>Tiradas de salvación</li>
             </ul>
         </div>
 
         <div id="Hechizos">
-            <h4>Hechizos</h4>
+            <h2>Hechizos</h2>
         </div>
 
         <div id="Habilidades">
-            <h4>Habilidades</h4>
+            <h2>Habilidades</h2>
             <button onclick="ElegirHabilidades()">Elegir</button>
-            <ul>
-                <li>Acrobacias (Destreza)</li>
-                <li>Manejo de animales (Sabiduría)</li>
-                <li>Arcana (Inteligencia)</li>
-                <li>Atletismo (Fuerza)</li>
-                <li>Engaño (Carisma)</li>
-                <li>Historia (Inteligencia)</li>
-                <li>Visión (Sabiduría)</li>
-                <li>Intimidación (Carisma)</li>
-                <li>Investigación (Inteligencia)</li>
-                <li>Medicina (Sabiduría)</li>
-                <li>Naturaleza (Inteligencia)</li>
-                <li>Percepción (Sabiduría)</li>
-                <li>Actuación (Carisma)</li>
-                <li>Persuación (Carisma)</li>
-                <li>Religión (Inteligencia)</li>
-                <li>Juego de manos (Destreza)</li>
-                <li>Sigilo (Destreza)</li>
-                <li>Supervivencia (Sabiduría)</li>
-            </ul>
         </div>
         <p>Sabiduría pasiva (percepción)</p>
         <p>Otras capacidades e idiomas conocidos</p>
 
         <div id="Equipamiento">
-            <h4>Equipamiento</h4>
+            <h2>Equipamiento</h2>
             <ul>
                 <li>Monedas de oro</li>
-                <input  id="monedasDeOro"/>
+                <input type="number" id="monedasDeOro"/>
                 <li>Monedas de plata</li>
-                <input id="monedasDePlata"/>
+                <input type="number" id="monedasDePlata"/>
                 <li>Monedas de cobre</li>
-                <input id="monedasDeCobre"/>
+                <input type="number" id="monedasDeCobre"/>
 
             </ul>
         </div>
 
         <div id="Personalización">
-            <h4>Personalización</h4>
+            <h2>Personalización</h2>
             <ul>
                 <li>Edad</li>
-                <input id="edad"/>
+                <input type="number" id="edad"/>
                 <li>Altura</li>
                 <input id="altura"/>
                 <li>Peso</li>
-                <input id="peso"/>
+                <input type="number" id="peso"/>
                 <li>Ojos</li>
-                <input id="ojos"/>
+                <input type="text" id="ojos"/>
                 <li>Piel</li>
-                <input id="piel"/>
+                <input type="text" id="piel"/>
                 <li>Cabello</li>
-                <input id="cabello"/>
+                <input type="text" id="cabello"/>
             </ul>
         </div>
 

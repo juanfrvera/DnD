@@ -45,11 +45,13 @@ window.onbeforeunload = function(){
 
 var cantidadHabilidades;
 var divHabilidades;
+
+//Muestra las habilidades elegibles por la clase junto con checkbox para elegir
 function ElegirHabilidades(){
     var clase = document.getElementById("clase").value;
     cantidadHabilidades = eval(clase+'Cantidad');
     divHabilidades = document.getElementById("Habilidades");
-    divHabilidades.innerHTML = '<h4>Habilidades<h4/>';
+    divHabilidades.innerHTML = '<h2>Habilidades<h2/>';
     divHabilidades.innerHTML += '<p>Elige '+cantidadHabilidades+' habilidades:</p>';
     divHabilidades.innerHTML += '<ul id="listaHabilidades"></ul>';
     var ul = document.getElementById("listaHabilidades");
@@ -69,6 +71,7 @@ function ElegirHabilidades(){
     divHabilidades.innerHTML += '<button onclick="AceptarHabilidades()">Aceptar</button>'
 }
 
+//Acepta las habilidades elegidas
 function AceptarHabilidades(){
     var checkboxes = document.getElementsByName("habilidad");
     var habilidadesElegidas = 0;
@@ -85,10 +88,12 @@ function AceptarHabilidades(){
     else
         alert("Por favor elige "+cantidadHabilidades+" habilidades.");
 }
+
+//Escribe las habilidades que han sido elegidas en la planilla
 function EscribirHabilidades(){
     divHabilidades = document.getElementById("Habilidades");
 
-    divHabilidades.innerHTML = '<h4>Habilidades</h4>';
+    divHabilidades.innerHTML = '<h2>Habilidades</h2>';
     divHabilidades.innerHTML += '<ul id="listaHabilidades"></ul>';
     var ul = document.getElementById("listaHabilidades");
     
