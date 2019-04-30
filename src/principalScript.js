@@ -54,6 +54,9 @@ function ElegirHabilidades(){
     divHabilidades.innerHTML += '<ul id="listaHabilidades"></ul>';
     var ul = document.getElementById("listaHabilidades");
     var habilidadesElegibles = eval(clase+'Habilidades');
+    if(habilidadesElegibles.length == 0)
+        habilidadesElegibles = habilidades;
+        
     habilidadesElegibles.forEach(function(habilidad){
         ul.innerHTML+='<li><input name="habilidad" type="checkbox" value="'+habilidad+'">'+habilidad+'</li>'
     });
