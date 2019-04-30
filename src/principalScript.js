@@ -1,7 +1,7 @@
 var inputs =
 [
     //--Principales
-    'nombrePersonaje','alineacion','experiencia','nombreJugador',
+    'nombrePersonaje','subraza','alineacion','experiencia','nombreJugador',
     //--Cualidades
     'fuerza','destreza','constitucion','inteligencia','sabiduria','carisma',
     //--Cualidades de salvación
@@ -63,7 +63,7 @@ function ElegirHabilidades(){
     }
         
     habilidadesElegibles.forEach(function(habilidad){
-        ul.innerHTML+='<li><input name="habilidad" type="checkbox" value="'+habilidad+'">'+habilidad+'</li>'
+        ul.innerHTML+='<li><input class="checkbox" name="habilidad" type="checkbox" value="'+habilidad+'">'+habilidad+'</li>'
     });
 
     divHabilidades.innerHTML += '<button onclick="AceptarHabilidades()">Aceptar</button>'

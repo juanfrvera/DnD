@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Dungeons & Dragons</title>
+        <meta name="viewport" content="width=device-width, user-scalable=yes">
         <link rel="stylesheet" type="text/css" href="style.css">
 
         <script src="script.js"></script>
@@ -13,7 +14,7 @@
             <h4>Principal</h4>
             <ul>
                 <li>Nombre del personaje</li>
-                <input id="nombrePersonaje"/>
+                <input id="nombrePersonaje" class="completo"/>
                 <li>Raza</li>
                 <select id="raza">
                     <option value="draconico">Dracónico</option>
@@ -26,6 +27,8 @@
                     <option value="tiefling">Tiefling</option>
                     <option value="semiorco">Semi orco</option>
                 </select>
+                <li>Sub raza</li>
+                <input id="subraza"  class="completo"/>
                 <li>Clase</li>
                 <select id="clase">
                     <option value="barbaro">Bárbaro</option>
@@ -43,11 +46,11 @@
                     
                 </select>
                 <li>Alineación</li>
-                <input id="alineacion"/>
+                <input id="alineacion"  class="completo"/>
                 <li>Puntos de experiencia</li>
-                <input id="experiencia"/>
+                <input id="experiencia"  class="completo"/>
                 <li>Nombre del jugador</li>
-                <input id="nombreJugador"/>
+                <input id="nombreJugador"  class="completo"/>
             </ul>
         </div>
         <div id="Cualidades" class="importante">
@@ -141,9 +144,10 @@
                 <li>Monedas de oro</li>
                 <input  id="monedasDeOro"/>
                 <li>Monedas de plata</li>
-                <input id="monedasDePlata">
+                <input id="monedasDePlata"/>
                 <li>Monedas de cobre</li>
-                <inpinput id="monedasDeCobre">
+                <input id="monedasDeCobre"/>
+
             </ul>
         </div>
 
