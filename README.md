@@ -1,6 +1,8 @@
 ﻿Hola, para poder descargar el repositorio tenes que clonarlo en una carpeta en tu computadora.
 
-Esto se hace usando:
+Primero tenés que tener instalado Git.
+
+Una vez instalado ya podés clonar el repositorios, esto se hace usando:
 git clone https://github.com/juanfrvera/DnD
 
 Una vez descargado, te podrás manejar de la siguiente manera
