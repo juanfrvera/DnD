@@ -224,8 +224,8 @@ function LoadHechizos(){
   return texto;
 }
 
-function MostrarHechizos(texto){
-document.getElementById("areaHechizos").value = "texto"
+function MostrarHechizos(){
+  document.getElementById("areaHechizos").value = "texto";
 }
 
   //document.getElementById("textToEncode").innerHTML = texto;
