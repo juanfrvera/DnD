@@ -29,6 +29,11 @@
                 </select>
                 <li>Sub raza</li>
                 <input type="text" id="subraza"  class="completo"/>
+                <!--
+                    Enanos:
+                    - de las colinas.
+                    - de las montañas.
+                -->
                 <li>Clase</li>
                 <select id="clase">
                     <option value="barbaro">Bárbaro</option>
@@ -53,21 +58,40 @@
                 <input type="text" id="nombreJugador"  class="completo"/>
             </ul>
         </div>
-        <div id="Cualidades">
-            <h2>Cualidades</h2>
+        <div id="Caracteristicas">
+            <h2>Características</h2>
             <ul>
                 <li>Fuerza</li>
                 <input type="number" id="fuerza"/>
+                <!--
+                    Enanos de las montañas +2
+                -->
                 <li>Destreza</li>
                 <input type="number" id="destreza"/>
+                <!-- Modificadores Destreza
+                    Elfos +2
+                -->
                 <li>Constitución</li>
                 <input type="number" id="constitucion"/>
+                <!--
+                    Enanos +2
+                -->
                 <li>Inteligencia</li>
                 <input type="number" id="inteligencia"/>
+                <!--Modificadores inteligencia
+                    Alto elfo +1
+                -->
                 <li>Sabiduría</li>
                 <input type="number" id="sabiduria"/>
+                <!-- Modificadores sabiduría
+                    Enano de las colinas +1
+                    Elfo del bosque +1
+                -->
                 <li>Carisma</li>
                 <input type="number" id="carisma"/>
+                <!-- Modifcadores carisma
+                    Elfo drow +1
+                -->
             </ul>
         </div>
         Inspiración
@@ -98,14 +122,48 @@
                 <input type="number" id="iniciativa"/>
                 <li>Velocidad</li>
                 <input type="number" id="velocidad"/>
+                <!--
+                    Enanos: 25 pies
+                        Su velocidad no se reduce al llevar armadura pesada
+                    Elfos: 30 pies
+                        Elfo del bosque: 35 pies
+                -->
                 <li>Vida máxima</li>
                 <input type="number" id="vidaMaxima"/>
+                <!--Modificadores vida máxima
+                    Enano de las colinas:
+                        +1 plano.
+                        +1 por cada nivel (a partir del nivel 2)
+                -->
                 <li>Vida actual</li>
                 <input type="number" id="vidaActual"/>
                 <li>Hit dice</li>
                 <input type="number" id="hitDice"/>
                 <li>Tiradas de salvación</li>
+                <li>Visión</li>
+                <!--Visiones
+                    Elfos: 
+                        60 pies (18 metros)
+                        Lus tenue -> Plena luz
+                        Oscuridad -> Luz tenue
+
+                -->
             </ul>
+        </div>
+        <div id="Ataque">
+            <h2>Ataque</h2>
+            <ul id="listaDeArmas">
+                <li>
+                    <h3>Arma 1</h3>
+                    <input id="nombreArma1"/>
+                    <p>Daño de ataque</p>
+                    <input id="ataqueArma1" />
+                    <p>Tipo de daño</p>
+                    <input id="tipoArma1"/>
+                </li>
+            </ul>
+            <button onclick="QuitarArma()">Quitar arma</button>
+            <button onclick="AgregarArma()">Agregar arma</button>
         </div>
 
         <div id="Hechizos">
@@ -136,9 +194,16 @@
             <h2>Personalización</h2>
             <ul>
                 <li>Edad</li>
+                <!--Edades máximas según razas:
+                -Enano: 400
+                -Elfo: 700 (adulto a los 100)
+                -->
                 <input type="number" id="edad"/>
                 <li>Altura</li>
                 <input id="altura"/>
+                <!--
+                    Elfos: entre 1.5m y 1.8m
+                -->
                 <li>Peso</li>
                 <input type="number" id="peso"/>
                 <li>Ojos</li>
