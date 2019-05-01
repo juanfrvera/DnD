@@ -57,18 +57,18 @@ var tipsmediano = [
     " a tirar el dado y debes usar la puntuación obtenida en la nueva tirada.",
     "Valiente: Tienes ventaja en las tiradas de salvación en contra de ser asustado.",
     "Agilidad Mediana: Puedes moverte a través del espacio de cualquier criatura que sea de un tamaño mayor que el tuyo."
-]
+];
 var ayudas = {
     nombrePersonaje: "El nombre de tu personaje, ejemplo Chicho",
     alineacion: "Tu personaje es bueno o malo?",
-    nombreJugador: "Tu nombre, como por ejemplo: Lau",
+    nombreJugador: "Tu nombre, como por ejemplo: Lau o luxlp",
     //Monedas
-    monedasDeOro: "Juntá tu tesorito",
+    monedasDeOro: "Entregá tu tesorito ;)",
     monedasDeCobre: "Si juntas 10, llegas a una moneda de plata",
     //Personalización
     ojos:"Ojito con perder un ojo o.O",
     piel:"El tipo o color de piel de tu personaje",
-    cabello:"Recomiendo comprar shampoo barato y sin perfume"
+    cabello:"Recomiendo comprar shampoo barato y sin perfume. Bañate"
   };
   var ayudamediano = {
     //Principal
@@ -82,4 +82,4 @@ var ayudas = {
     ojos:"El color de ojos de los medianos suele ser castaño o color avellana",
     piel:"La piel de los medianos va desde la tez morena a la pálida con tonos sonrosados",
     cabello:"El pelo de los medianos es normalmente castaño o  castaño claro y ondulado"
-  }
+  };

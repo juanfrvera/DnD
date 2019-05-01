@@ -42,6 +42,7 @@ window.onload = function(){
     raza = document.getElementById("raza").value;
     clase = document.getElementById("clase").value;
     ActualizarTips();
+    EnlazarModificadores();
 }
 
 //Al actualizar o cerrar la página guardar
@@ -245,7 +246,7 @@ function CargarSubRazas(){
     select.options[select.options.length] = new Option(subrazas[index], index);
   }
 }
-var raza, clase;
+var raza, subraza, clase;
 function RazaCambiada(select){
   raza = select.value;
   ActualizarTips();
@@ -256,5 +257,23 @@ function ClaseCambiada(select){
   ActualizarTips();
 }
 function SubRazaCambiada(select){
+
+}
+
+function EnlazarModificadores(){
+  var modificables = document.getElementsByClassName("modificable");
+  var modificadoresSubRaza = eval(subraza+"Modificadores");
+  for(var i = 0; i < modificables.length; i++) {
+    var elemento = modificables[i];
+    var nombre = elemento.parentNode.firstElementChild.innerHTML;
+    var modificador = modificadoresSubRaza[nombre];
+    if(modificador != undefined){
+      var resultado = document.createElement("p");
+      element.parentNode.appendChild(resultado);
+      elemento.onchange = function(){resultado.innerHTML = " + 1 = " + (parseInt(elemento.value) + modificador);};
+    }
+  }
+}
+function MostrarModificadores(){
 
 }
