@@ -7,6 +7,7 @@
 
         <script src="script.js"></script>
         <script src="skills.js"></script>
+        <script src="magia.js"></script>
         <!--Los scripts tienen que estar en este orden ya que el segundo utiliza al primero-->
     </head>
     <body>
@@ -48,8 +49,10 @@
                     <option value="mago">Mago</option>
                     <option value="paladin">Paladín</option>
                     <option value="explorador">Explorador</option>
-                    
+
                 </select>
+                <li>Sub clase</li>
+                <input type="text" id="subclase"  class="completo"/>
                 <li>Alineación</li>
                 <input type="text" id="alineacion"  class="completo"/>
                 <li>Puntos de experiencia</li>
@@ -142,7 +145,7 @@
                 <li>Tiradas de salvación</li>
                 <li>Visión</li>
                 <!--Visiones
-                    Elfos: 
+                    Elfos:
                         60 pies (18 metros)
                         Lus tenue -> Plena luz
                         Oscuridad -> Luz tenue
@@ -167,16 +170,50 @@
         </div>
 
         <div id="Hechizos">
-            <h2>Hechizos</h2>
-        </div>
 
+
+            <h2>Hechizos</h2>
+            <textarea id="listaHechizos"  style="color: black; background-color: transparent; display: inline-block; "></textarea>
+
+            <!--codigo de la funcion del boton en magia.js-->
+            <button  style="position: relative; left:260px;top:-400px" onclick= "MostrarHechizos()">Mostrar Hechizos</button>
+            <textarea id="areaHechizos"  style="color: black; background-color: transparent; ;display: inline-block; "></textarea>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
         <div id="Habilidades">
             <h2>Habilidades</h2>
             <button onclick="ElegirHabilidades()">Elegir</button>
         </div>
-        <p>Sabiduría pasiva (percepción)</p>
-        <p>Otras capacidades e idiomas conocidos</p>
 
+        <div>
+        <h2>Capacidades e idiomas</h2>
+        <p>Sabiduría pasiva (percepción)</p>
+        <input type="text" id="sabiduriaPasiva" />
+        <p>idiomas conocidos</p>
+        <input type="text" id="idiomaConocido1" />
+        <input type="text" id="idiomaConocido2" />
+        <p>Otras capacidades</p>
+        <input type="text" id="capacidades" />
+      </div>
         <div id="Equipamiento">
             <h2>Equipamiento</h2>
             <ul>

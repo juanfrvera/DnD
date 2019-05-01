@@ -1,7 +1,7 @@
 var inputs =
 [
     //--Principales
-    'nombrePersonaje','subraza','alineacion','experiencia','nombreJugador',
+    'nombrePersonaje','subraza','subclase','alineacion','experiencia','nombreJugador',
     //--Cualidades
     'fuerza','destreza','constitucion','inteligencia','sabiduria','carisma',
     //--Cualidades de salvación
@@ -12,7 +12,14 @@ var inputs =
     //--Monedas
     'monedasDeOro', 'monedasDePlata', 'monedasDeCobre',
     //--Personalizacion
-    'edad','altura','peso','ojos','piel','cabello'
+    'edad','altura','peso','ojos','piel','cabello',
+    //--Hechizos
+    'listaHechizos','areaHechizos',
+    //--idiomas
+    'idiomaConocido1','idiomaConocido2',
+    //--Otras capacidades
+    'sabiduriaPasiva','capacidades'
+
 ]
 var selects =
 [
@@ -71,7 +78,7 @@ function ElegirHabilidades(){
             habilidadesElegibles.push(habilidades[indicesClase[i]]);
         }
     }
-        
+
     habilidadesElegibles.forEach(function(habilidad){
         ul.innerHTML+='<li><input class="checkbox" name="habilidad" type="checkbox" value="'+habilidad+'">'+habilidad+'</li>'
     });
@@ -104,7 +111,7 @@ function EscribirHabilidades(){
     divHabilidades.innerHTML = '<h2>Habilidades</h2>';
     divHabilidades.innerHTML += '<ul id="listaHabilidades"></ul>';
     var ul = document.getElementById("listaHabilidades");
-    
+
     listaHabilidades.forEach(function(habilidad){
         ul.innerHTML += '<li>'+habilidad+'</li>';
     })
@@ -148,7 +155,7 @@ function CargarArmas(){
     var armasGuardadas = localStorage.getItem("cantidadArmas");
     if(armasGuardadas == "null")armasGuardadas=1;
     cantidadArmas = 1;
-    
+
     CargarDatosArmas();
     for(let i = 2; i <= armasGuardadas; i++){AgregarArma();}
 }
