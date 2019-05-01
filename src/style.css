@@ -12,7 +12,7 @@ div h2{
 ul{
     list-style-type: none;
 }
-ul *{
+div *{
     width:100%;
     font-size:1em;
 }
@@ -29,15 +29,21 @@ button{
 textarea {
   display : block;
 
-  padding : 10px;
-  margin  : 10px 0 0 -10px;
-  width   : 340px;
+  
   height  : 360px;
 
   resize  : none;
   overflow: auto;
 }
-
+#listaHechizos{
+    color: black;
+    background-color: transparent;
+}
+#areaHechizos{
+    display:none;
+    color: black;
+    background-color: transparent;
+}
 
 /*Cuando la pantalla es grande (desktop)
 @media only screen and (min-width: 768px) {
