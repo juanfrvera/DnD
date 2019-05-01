@@ -176,7 +176,7 @@ function GuardarArmas(){
     }
 }
 
-function MostrarHechizos(){
+function LoadHechizos(){
   var clase = document.getElementById("clase").value;
   var texto = [];
   switch (clase) {
@@ -222,6 +222,10 @@ function MostrarHechizos(){
     break;
   }
   return texto;
+}
+
+function MostrarHechizos(texto){
+document.getElementById("areaHechizos").value = "texto"
 }
 
   //document.getElementById("textToEncode").innerHTML = texto;
