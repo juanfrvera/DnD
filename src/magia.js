@@ -51,6 +51,5 @@ var spellsMago = ['acid splash', 'blade ward', 'chill tocuh', 'dancing lights', 
 
 function MostrarHechizos() {
   var razaSeleccionada = document.getElementsByName("raza");
-         alert("hechizos disponibles: "+spellsMago);
-     }
+  alert("hechizos disponibles: "+spellsMago);
 }
