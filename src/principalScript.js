@@ -175,7 +175,6 @@ function GuardarArmas(){
         localStorage.setItem("tipoArma"+i,document.getElementById("tipoArma"+i).value);
     }
 }
-<<<<<<< HEAD
 
 function MostrarHechizos(){
   var clase = document.getElementById("clase").value;
@@ -183,41 +182,48 @@ function MostrarHechizos(){
   switch (clase) {
   case "bardo":
     for (var i = 0; i < spellsBardo.length; i+=1) {
-    texto.push(spellsBardo[i]);}
-    [break;]
-  case "clerigo"
+      texto.push(spellsBardo[i]);
+    }
+    break;
+  case "clerigo":
     for (var i = 0; i < spellsClerigo.length; i+=1) {
-        texto.push(spellsClerigo[i]);}
-    [break;]
+        texto.push(spellsClerigo[i]);
+    }
+    break;
   case "druida":
     for (var i = 0; i < spellsDruida.length; i+=1) {
-      texto.push(spellsDruida[i]);}
-    [break;]
+      texto.push(spellsDruida[i]);
+    }
+    break;
   case "paladin":
     for (var i = 0; i < spellsPaladines.length; i+=1) {
-      texto.push(spellsPaladines[i]);}
-    [break;]
+      texto.push(spellsPaladines[i]);
+    }
+    break;
   case "explorador":
     for (var i = 0; i < spellsExplorador.length; i+=1) {
-      texto.push(spellsExplorador[i]);}
-    [break;]
+      texto.push(spellsExplorador[i]);
+    }
+    break;
   case "mago":
     for (var i = 0; i < spellsMago.length; i+=1) {
-      texto.push(spellsMago[i]);}
-    [break;]
+      texto.push(spellsMago[i]);
+    }
+    break;
   case "brujo":
     for (var i = 0; i < spellsBrujo.length; i+=1) {
-      texto.push(spellsBrujo[i]);}
-    [break;]
+      texto.push(spellsBrujo[i]);
+    }
+    break;
   case "hechicero":
     for (var i = 0; i < spellsHechicero.length; i+=1) {
-      texto.push(spellsHechicero[i]);}
-    [break;]
+      texto.push(spellsHechicero[i]);
+    }
+    break;
   }
-return text;}
+  return texto;
+}
 
   //document.getElementById("textToEncode").innerHTML = texto;
   //for (var i = 0; i < miArray.length; i+=1) {
   //console.log("En el índice '" + i + "' hay este valor: " + miArray[i]);
-=======
->>>>>>> fb701d672a3c53fd9d807e156458cc8942d08017
