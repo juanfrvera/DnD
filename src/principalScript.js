@@ -38,7 +38,10 @@ window.onload = function(){
         EscribirHabilidades();
     }
 
-    //eval(document.getElementById('clase').value + 'Cantidad') );
+    CargarAyudas();
+    raza = document.getElementById("raza").value;
+    clase = document.getElementById("clase").value;
+    ActualizarTips();
 }
 
 //Al actualizar o cerrar la página guardar
@@ -56,8 +59,6 @@ var divHabilidades;
 
 //Muestra las habilidades elegibles por la clase junto con checkbox para elegir
 function ElegirHabilidades(){
-    //Obtener clase del select con id clase
-    var clase = document.getElementById("clase").value;
     //Obtener cantidad de habilidades elegibles según la clase
     cantidadHabilidades = eval(clase+'Cantidad');
     //Obtener referencia al div de habilidadess
@@ -178,7 +179,6 @@ function GuardarArmas(){
 }
 
 function LoadHechizos(){
-  var clase = document.getElementById("clase").value;
   var texto = [];
   switch (clase) {
   case "bardo":
@@ -232,6 +232,29 @@ function MostrarHechizos(){
   document.getElementById("areaHechizos").value = LoadHechizos();
 }
 
-  //document.getElementById("textToEncode").innerHTML = texto;
-  //for (var i = 0; i < miArray.length; i+=1) {
-  //console.log("En el índice '" + i + "' hay este valor: " + miArray[i]);
+//Carga las sub razas en el select de subrazas
+function CargarSubRazas(){
+  var select = document.getElementById("subraza");
+
+  select.options.length = 0;
+  
+  var subrazas = eval(raza+"SubRazas");
+
+  for (let index = 0; index < subrazas.length; index++) {
+    const element = subrazas[index];
+    select.options[select.options.length] = new Option(subrazas[index], index);
+  }
+}
+var raza, clase;
+function RazaCambiada(select){
+  raza = select.value;
+  ActualizarTips();
+  CargarSubRazas();
+}
+function ClaseCambiada(select){
+  clase = select.value;
+  ActualizarTips();
+}
+function SubRazaCambiada(select){
+
+}

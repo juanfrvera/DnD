@@ -17,7 +17,7 @@
                 <li>Nombre del personaje</li>
                 <input type="text" id="nombrePersonaje" class="completo"/>
                 <li>Raza</li>
-                <select id="raza">
+                <select id="raza" onchange="RazaCambiada(this)">
                     <option value="draconico">Dracónico</option>
                     <option value="elfo">Elfo</option>
                     <option value="enano">Enano</option>
@@ -29,14 +29,11 @@
                     <option value="semiorco">Semi orco</option>
                 </select>
                 <li>Sub raza</li>
-                <input type="text" id="subraza"  class="completo"/>
-                <!--
-                    Enanos:
-                    - de las colinas.
-                    - de las montañas.
-                -->
+                <select id="subraza" onchange="SubRazaCambiada(this)">
+
+                </select>
                 <li>Clase</li>
-                <select id="clase">
+                <select id="clase" onchange="ClaseCambiada(this)">
                     <option value="barbaro">Bárbaro</option>
                     <option value="bardo">Bardo</option>
                     <option value="brujo">Brujo</option>
@@ -49,7 +46,6 @@
                     <option value="mago">Mago</option>
                     <option value="paladin">Paladín</option>
                     <option value="explorador">Explorador</option>
-
                 </select>
                 <li>Sub clase</li>
                 <input type="text" id="subclase"  class="completo"/>
@@ -73,6 +69,7 @@
                 <input type="number" id="destreza"/>
                 <!-- Modificadores Destreza
                     Elfos +2
+                    Medianos +2
                 -->
                 <li>Constitución</li>
                 <input type="number" id="constitucion"/>
@@ -94,6 +91,7 @@
                 <input type="number" id="carisma"/>
                 <!-- Modifcadores carisma
                     Elfo drow +1
+                    Mediano piesligero +1
                 -->
             </ul>
         </div>
@@ -130,6 +128,7 @@
                         Su velocidad no se reduce al llevar armadura pesada
                     Elfos: 30 pies
                         Elfo del bosque: 35 pies
+                    Medianos: 25 pies
                 -->
                 <li>Vida máxima</li>
                 <input type="number" id="vidaMaxima"/>
@@ -201,7 +200,6 @@
                 <input type="number" id="monedasDePlata"/>
                 <li>Monedas de cobre</li>
                 <input type="number" id="monedasDeCobre"/>
-
             </ul>
         </div>
 
@@ -212,15 +210,20 @@
                 <!--Edades máximas según razas:
                 -Enano: 400
                 -Elfo: 700 (adulto a los 100)
+                -Mediano: 150 (adulto a los 20)
                 -->
                 <input type="number" id="edad"/>
                 <li>Altura</li>
                 <input id="altura"/>
                 <!--
                     Elfos: entre 1.5m y 1.8m
+                    Medianos: alrededor de 0.9m
                 -->
                 <li>Peso</li>
                 <input type="number" id="peso"/>
+                <!--Peso
+                    Mediano: poco más de 18kg
+                -->
                 <li>Ojos</li>
                 <input type="text" id="ojos"/>
                 <li>Piel</li>
@@ -228,6 +231,9 @@
                 <li>Cabello</li>
                 <input type="text" id="cabello"/>
             </ul>
+        </div>
+        <div id="Tips">
+            <h2>Tips para tu personaje</h2>
         </div>
 
         <a href= "historia.html"> Click para ir a la Historia </a>
@@ -245,7 +251,8 @@
         };
         firebase.initializeApp(config);
         </script>
-
+        <script src="clasesYRazas.js"></script>
+        <script src="ayuda.js"></script>
         <script src="principalScript.js"></script>
     </body>
 </html>
