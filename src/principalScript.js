@@ -175,9 +175,8 @@ function GuardarArmas(){
         localStorage.setItem("tipoArma"+i,document.getElementById("tipoArma"+i).value);
     }
 }
-<<<<<<< HEAD
 
-function MostrarHechizos(){
+function LoadHechizos(){
   var clase = document.getElementById("clase").value;
   var texto = [];
   switch (clase) {
@@ -216,8 +215,10 @@ function MostrarHechizos(){
   }
 return text;}
 
+function MostrarHechizos(texto){
+document.getElementById("areaHechizos").value = "texto"
+}
+
   //document.getElementById("textToEncode").innerHTML = texto;
   //for (var i = 0; i < miArray.length; i+=1) {
   //console.log("En el índice '" + i + "' hay este valor: " + miArray[i]);
-=======
->>>>>>> fb701d672a3c53fd9d807e156458cc8942d08017
