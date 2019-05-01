@@ -48,9 +48,3 @@ var spellsBrujo = ['blade ward', 'chill touch', 'eldritch blast', 'fiends', 'mag
 var spellsMago = ['acid splash', 'blade ward', 'chill tocuh', 'dancing lights', 'fire bolt', 'friends', 'light', 'mage hand', 'mending', 'message', 'minor illusion', 'poison spray', 'prestidigitation', 'ray of frost', 'shocking grasp', 'true strike',
 //lvl1
 'alarm', 'burning hands', 'charm person', 'chromatic orb', 'color spray', 'comprehend lenguages', 'detect magic', 'disguise self', 'expeditious retreat', 'false life', 'feather fall', 'find familiar', 'fog cloud', 'grease', 'identify', 'illusory script', 'jump', 'longstrider', 'mage armor', 'magic missile', 'protection form evil and good', 'ray of sickness', 'shield', 'silent image', 'sleep', 'tasha hideous laughter', 'tenser floating disk', 'thunderwave', 'unseen servant', 'witch bolt']
-
-function MostrarHechizos() {
-  var razaSeleccionada = document.getElementsByName("raza");
-         alert("hechizos disponibles: "+spellsMago);
-     }
-}

@@ -175,3 +175,14 @@ function GuardarArmas(){
         localStorage.setItem("tipoArma"+i,document.getElementById("tipoArma"+i).value);
     }
 }
+
+function MostrarHechizos(){
+  var clase = document.getElementById("clase").value;
+  switch (clase) {
+  case "bardo":
+
+    [break;]
+  case ""
+}
+
+//bardo.brujo.clerigo.hechicero.druida.mago.paladin.explorador.
