@@ -125,6 +125,7 @@ function AgregarArma(){
     GuardarArmas();
 
     cantidadArmas++;
+    var li = document.createElement("li");
     ulArmas.innerHTML += "<li>"+
         "<h3>Arma "+cantidadArmas+"</h3>"+
         '<input type="text" id="nombreArma'+cantidadArmas+'"/ >'+
@@ -138,12 +139,12 @@ function AgregarArma(){
 }
 function QuitarArma(){
     if(cantidadArmas > 1){
-        localStorage.removeItem("nombreArma"+cantidadArmas);
-        localStorage.removeItem("ataqueArma"+cantidadArmas);
-        localStorage.removeItem("tipoArma"+cantidadArmas);
+      localStorage.removeItem("nombreArma"+cantidadArmas);
+      localStorage.removeItem("ataqueArma"+cantidadArmas);
+      localStorage.removeItem("tipoArma"+cantidadArmas);
 
-        cantidadArmas--;
-        alert("Por favor actualiza para borrar el arma por completo");
+      cantidadArmas--;
+      document.location.reload();
     }
     else
         alert("No se puede eliminar la primera arma");
@@ -219,6 +220,9 @@ function LoadHechizos(){
     for (var i = 0; i < spellsHechicero.length; i+=1) {
       texto.push(spellsHechicero[i]);
     }
+    break;
+  default:
+    texto = "Los hechizos de esta clases están en construcción";
     break;
   }
   return texto;
