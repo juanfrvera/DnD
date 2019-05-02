@@ -218,7 +218,15 @@ function CalcularSumas(){
   catch{console.log("No hay característica definida para "+subraza);}
   for(let i = 0; i < modificables.length; i++) {
     var elemento = modificables[i];
-    CaracteristicaCambiada(elemento);
+    var resultado = document.getElementById("suma"+Capitalize(elemento.id));
+    if(CaracteristicaCambiada(elemento) == 0){
+      elemento.style.width = "100%";
+      resultado.style.display = "none";
+    }
+    else{
+      resultado.style.display = "inline-block";
+      elemento.style.width = "calc(100% - "+resultado.offsetWidth*1.5+"px)";
+    }
   }
 }
 //Devuelve el valor de suma al nombre de característica indicado
@@ -236,5 +244,7 @@ function CaracteristicaCambiada(caracteristica){
   var resultado = document.getElementById("suma"+Capitalize(caracteristica.id));
   var suma = SumaCaracteristica(caracteristica.id);
   resultado.innerHTML = ("+ "+suma+" = ") + (parseInt(caracteristica.value) + suma);
+  
+  return suma;
 }
 function MostrarModificadores(){}
