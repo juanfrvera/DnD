@@ -60,11 +60,12 @@ function ElegirHabilidades(){
     var clase = document.getElementById("clase").value;
     //Obtener cantidad de habilidades elegibles según la clase
     cantidadHabilidades = eval(clase+'Cantidad');
+    cantidadHabilidades >= 0;
     //Obtener referencia al div de habilidadess
     divHabilidades = document.getElementById("Habilidades");
     divHabilidades.innerHTML = '<h2>Habilidades<h2/>';
-    divHabilidades.innerHTML = '<p>Como eres un '+clase+' puedes elegir '+
-    cantidadHabilidades+' de las siguientes habilidades: </p>';
+    divHabilidades.innerHTML = '<p>Como eres un '+clase+' te corresponde elegir '+
+    cantidadHabilidades+' de las siguientes habilidades más las que considere necesaria de tu historia: </p>';
     divHabilidades.innerHTML += '<ul id="listaHabilidades"></ul>';
     var ul = document.getElementById("listaHabilidades");
     //Obtener lista de indices según la clase
@@ -97,7 +98,7 @@ function AceptarHabilidades(){
             listaHabilidades.push(checkbox.value);
         }
     })
-    if(habilidadesElegidas == cantidadHabilidades){
+    if(habilidadesElegidas >= -1){
        EscribirHabilidades();
     }
     else
