@@ -39,7 +39,7 @@ window.onload = function(){
     }
     CargarAyudas();
     ActualizarTips();
-    SumarCaracteristicas();
+    CalcularSumas();
 }
 
 //Al actualizar o cerrar la página guardar
@@ -205,37 +205,36 @@ function ClaseCambiada(select){
 function SubRazaCambiada(select){
   subraza = select.value;
   ActualizarTips();
-  SumarCaracteristicas();
+  CalcularSumas();
 }
 
-function SumarCaracteristicas(){
+var caracteristicasRaza = [];
+var caracteristicasSubRaza = [];
+function CalcularSumas(){
   var modificables = document.getElementsByClassName("sumable");
-  var caracteristicasRaza = [];
   try{caracteristicasRaza = Variable(raza,"Caracteristicas");}
   catch{console.log("No hay característica definida para "+raza);}
-  var caracteristicasSubRaza = [];
   try{caracteristicasSubRaza = Variable(raza,subraza,"Caracteristicas");}
   catch{console.log("No hay característica definida para "+subraza);}
   for(let i = 0; i < modificables.length; i++) {
     var elemento = modificables[i];
-    var nombre = elemento.id;
-    var caracteristica = caracteristicasSubRaza[nombre];
-    //Si no se encontró modificador en la subraza, buscar en la raza
-    if(caracteristica == undefined){
-      caracteristica = caracteristicasRaza[nombre];
-      if(caracteristica == undefined)
-        caracteristica = 0;
-    }
-    //Si no hay un resultado creado
-    var resultado = elemento.parentNode.lastElementChild;
-    //Si no había un resultado creado, crearlo
-    if(resultado.className != "sumaCaracteristica"){
-      resultado = document.createElement("p");
-      resultado.className = "sumaCaracteristica";
-      elemento.parentNode.appendChild(resultado);
-    }
-    resultado.innerHTML = ("+ "+caracteristica+" = ") + (parseInt(elemento.value) + caracteristica);
-    elemento.onchange = function(){resultado.innerHTML = ("+ "+caracteristica+" = ") + (parseInt(elemento.value) + caracteristica);};
+    CaracteristicaCambiada(elemento);
   }
+}
+//Devuelve el valor de suma al nombre de característica indicado
+function SumaCaracteristica(nombre){
+  var caracteristica = caracteristicasSubRaza[nombre];
+  //Si no se encontró modificador en la subraza, buscar en la raza
+  if(caracteristica == undefined){
+    caracteristica = caracteristicasRaza[nombre];
+    if(caracteristica == undefined)
+      caracteristica = 0;
+  }
+  return caracteristica;
+}
+function CaracteristicaCambiada(caracteristica){
+  var resultado = document.getElementById("suma"+Capitalize(caracteristica.id));
+  var suma = SumaCaracteristica(caracteristica.id);
+  resultado.innerHTML = ("+ "+suma+" = ") + (parseInt(caracteristica.value) + suma);
 }
 function MostrarModificadores(){}

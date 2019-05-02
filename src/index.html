@@ -74,14 +74,18 @@
         <div display: inline-block id="Caracteristicas">
             <h2>Características</h2>
             <ul>
-                <li>Fuerza</li>
-                <input type="number" id="fuerza" class="sumable"/>
+                <li>
+                    <h3>Fuerza</h3>
+                    <input type="number" id="fuerza" class="sumable" oninput="CaracteristicaCambiada(this)"/>
+                    <p class="sumaCaracteristica" id="sumaFuerza">+ 0 = 0</p>
+                </li>
                 <!--
                     Enanos de las montañas +2
                 -->
                 <li>
                     <h3>Destreza</h3>
-                    <input type="number" id="destreza" class="sumable"/>
+                    <input type="number" id="destreza" class="sumable" oninput="CaracteristicaCambiada(this)"/>
+                    <p class="sumaCaracteristica" id="sumaDestreza">+ 0 = 0</p>
                 </li>
                 <!-- Modificadores Destreza
                     Elfos +2
@@ -89,25 +93,34 @@
                 -->
                 <li>
                     <h3>Constitución</h3>
-                    <input type="number" id="constitucion" class="sumable"/>
+                    <input type="number" id="constitucion" class="sumable" oninput="CaracteristicaCambiada(this)"/>
+                    <p class="sumaCaracteristica" id="sumaConstitucion">+ 0 = 0</p>
                 </li>
                 <!--
                     Enanos +2
                 -->
-                <li>Inteligencia</li>
-                <input type="number" id="inteligencia" class="sumable"/>
+                <li>
+                    <h3>Inteligencia</h3>
+                    <input type="number" id="inteligencia" class="sumable" oninput="CaracteristicaCambiada(this)"/>
+                    <p class="sumaCaracteristica" id="sumaInteligencia">+ 0 = 0</p>
+                </li>
                 <!--Modificadores inteligencia
                     Alto elfo +1
                 -->
-                <li>Sabiduría</li>
-                <input type="number" id="sabiduria" class="sumable"/>
+                <li>
+                    <h3>Sabiduría</h3>
+                    <input type="number" id="sabiduria" class="sumable" oninput="CaracteristicaCambiada(this)"/>
+                    <p class="sumaCaracteristica" id="sumaSabiduria">+ 0 = 0</p>
+                </li>
                 <!-- Modificadores sabiduría
                     Enano de las colinas +1
                     Elfo del bosque +1
                 -->
-                <li>Carisma</li>
-                <input type="number" id="carisma" class="sumable"/>
-
+                <li>
+                    <h3>Carisma</h3>
+                    <input type="number" id="carisma" class="sumable" oninput="CaracteristicaCambiada(this)"/>
+                    <p class="sumaCaracteristica" id="sumaCarisma">+ 0 = 0</p>
+                </li>
             </ul>
         </div>
         <div inline-block id= Modificadores>
