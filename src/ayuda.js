@@ -137,7 +137,7 @@ var ayudaDraconido = {
   "tomando tonos escarlata, óxido, oro o cobre verdoso."
 }
 var tipsDraconido = [
-  "Ascendencia Dracónica. Tienes ascendencia dracónica, elige un tipo de dragón de la tabla Ascendencia Dracónica. "+
+  "Ascendencia Dracónica. Tienes ascendencia dracónica, elige un tipo de dragón de la tabla. "+
   "Tu arma de aliento y tu resistencia al daño están determinados por el tipo de dragón, tal como se muestra en la tabla.",
   "Arma de Aliento. Puedes usar tu acción para exhalar energía destructiva. Tu ascendencia dracónica determina el tamaño, "+
   "forma y tipo de daño de la exhalación.",

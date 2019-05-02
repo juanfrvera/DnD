@@ -26,10 +26,10 @@ button{
     margin: 0.5em 0;
 }
 /*Modificables son los inputs a los cuales se puede hacerles +1 +2 etc*/
-input.modificable{
+input.sumable{
     width:75%;
 }
-.modificador{
+.sumaCaracteristica{
     display:inline-block;
     width:15%;
 }

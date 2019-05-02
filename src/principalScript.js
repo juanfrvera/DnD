@@ -39,7 +39,7 @@ window.onload = function(){
     }
     CargarAyudas();
     ActualizarTips();
-    EnlazarModificadores();
+    SumarCaracteristicas();
 }
 
 //Al actualizar o cerrar la página guardar
@@ -54,7 +54,6 @@ window.onbeforeunload = function(){
     return null;
 }
 
-<<<<<<< HEAD
 var cantidadHabilidades;
 var divHabilidades;
 
@@ -124,8 +123,6 @@ function EscribirHabilidades(){
     divHabilidades.innerHTML += '<button onclick="ElegirHabilidades()">Cambiar</button>';
 }
 
-=======
->>>>>>> 1003e84d61706cb5819e9b0e8b3a787ae309c9fd
 var cantidadArmas = 1;
 var ulArmas;
 function AgregarArma(){
@@ -208,37 +205,37 @@ function ClaseCambiada(select){
 function SubRazaCambiada(select){
   subraza = select.value;
   ActualizarTips();
-  EnlazarModificadores();
+  SumarCaracteristicas();
 }
 
-function EnlazarModificadores(){
-  var modificables = document.getElementsByClassName("modificable");
-  var modificadoresRaza = [];
-  try{modificadoresRaza = Variable(raza,"Modificadores");}
-  catch{console.log("No hay modificadores definidos para "+raza);}
-  var modificadoresSubRaza = [];
-  try{modificadoresSubRaza = Variable(raza,subraza,"Modificadores");}
-  catch{console.log("No hay modificador definido para "+subraza);}
+function SumarCaracteristicas(){
+  var modificables = document.getElementsByClassName("sumable");
+  var caracteristicasRaza = [];
+  try{caracteristicasRaza = Variable(raza,"Caracteristicas");}
+  catch{console.log("No hay característica definida para "+raza);}
+  var caracteristicasSubRaza = [];
+  try{caracteristicasSubRaza = Variable(raza,subraza,"Caracteristicas");}
+  catch{console.log("No hay característica definida para "+subraza);}
   for(let i = 0; i < modificables.length; i++) {
     var elemento = modificables[i];
     var nombre = elemento.id;
-    var modificador = modificadoresSubRaza[nombre];
+    var caracteristica = caracteristicasSubRaza[nombre];
     //Si no se encontró modificador en la subraza, buscar en la raza
-    if(modificador == undefined){
-      modificador = modificadoresRaza[nombre];
-      if(modificador == undefined)
-        modificador = 0;
+    if(caracteristica == undefined){
+      caracteristica = caracteristicasRaza[nombre];
+      if(caracteristica == undefined)
+        caracteristica = 0;
     }
     //Si no hay un resultado creado
     var resultado = elemento.parentNode.lastElementChild;
     //Si no había un resultado creado, crearlo
-    if(resultado.className != "modificador"){
+    if(resultado.className != "sumaCaracteristica"){
       resultado = document.createElement("p");
-      resultado.className = "modificador";
+      resultado.className = "sumaCaracteristica";
       elemento.parentNode.appendChild(resultado);
     }
-    resultado.innerHTML = ("+ "+modificador+" = ") + (parseInt(elemento.value) + modificador);
-    elemento.onchange = function(){resultado.innerHTML = ("+ "+modificador+" = ") + (parseInt(elemento.value) + modificador);};
+    resultado.innerHTML = ("+ "+caracteristica+" = ") + (parseInt(elemento.value) + caracteristica);
+    elemento.onchange = function(){resultado.innerHTML = ("+ "+caracteristica+" = ") + (parseInt(elemento.value) + caracteristica);};
   }
 }
 function MostrarModificadores(){}
