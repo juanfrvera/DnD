@@ -14,51 +14,61 @@
         <div id="Principal">
             <h2>Principal</h2>
             <ul>
-                <li>Nombre del personaje</li>
-                <input type="text" id="nombrePersonaje" class="completo"/>
-                <li>Raza</li>
-                <select id="raza">
-                    <option value="draconico">Dracónico</option>
-                    <option value="elfo">Elfo</option>
-                    <option value="enano">Enano</option>
-                    <option value="gnomo">Gnomo</option>
-                    <option value="humano">Humano</option>
-                    <option value="mediano">Mediano</option>
-                    <option value="semielfo">Semi elfo</option>
-                    <option value="tiefling">Tiefling</option>
-                    <option value="semiorco">Semi orco</option>
-                </select>
-                <li>Sub raza</li>
-                <input type="text" id="subraza"  class="completo"/>
-                <!--
-                    Enanos:
-                    - de las colinas.
-                    - de las montañas.
-                -->
-                <li>Clase</li>
-                <select id="clase">
-                    <option value="barbaro">Bárbaro</option>
-                    <option value="bardo">Bardo</option>
-                    <option value="brujo">Brujo</option>
-                    <option value="guerrero">Guerrero</option>
-                    <option value="clerigo">Clérigo</option>
-                    <option value="monje">Monje</option>
-                    <option value="hechicero">Hechicero</option>
-                    <option value="druida">Druida</option>
-                    <option value="picaro">Pícaro</option>
-                    <option value="mago">Mago</option>
-                    <option value="paladin">Paladín</option>
-                    <option value="explorador">Explorador</option>
-
-                </select>
-                <li>Sub clase</li>
-                <input type="text" id="subclase"  class="completo"/>
-                <li>Alineación</li>
-                <input type="text" id="alineacion"  class="completo"/>
-                <li>Puntos de experiencia</li>
-                <input type="number" id="experiencia"  class="completo"/>
-                <li>Nombre del jugador</li>
-                <input type="text" id="nombreJugador"  class="completo"/>
+                <li>
+                    <h3>Nombre del personaje</h3>
+                    <input type="text" id="nombrePersonaje" class="completo"/>
+                </li>
+                <li>
+                    <h3>Raza</h3>
+                    <select id="raza" onchange="RazaCambiada(this)">
+                        <option value="draconido">Dracónido</option>
+                        <option value="elfo">Elfo</option>
+                        <option value="enano">Enano</option>
+                        <option value="gnomo">Gnomo</option>
+                        <option value="humano">Humano</option>
+                        <option value="mediano">Mediano</option>
+                        <option value="semielfo">Semi elfo</option>
+                        <option value="tiefling">Tiefling</option>
+                        <option value="semiorco">Semi orco</option>
+                    </select>
+                </li>
+                <li>
+                    <h3>Sub raza</h3>
+                    <select id="subraza" onchange="SubRazaCambiada(this)"></select>
+                </li>
+                <li>
+                    <h3>Clase</h3>
+                    <select id="clase" onchange="ClaseCambiada(this)">
+                        <option value="barbaro">Bárbaro</option>
+                        <option value="bardo">Bardo</option>
+                        <option value="brujo">Brujo</option>
+                        <option value="guerrero">Guerrero</option>
+                        <option value="clerigo">Clérigo</option>
+                        <option value="monje">Monje</option>
+                        <option value="hechicero">Hechicero</option>
+                        <option value="druida">Druida</option>
+                        <option value="picaro">Pícaro</option>
+                        <option value="mago">Mago</option>
+                        <option value="paladin">Paladín</option>
+                        <option value="explorador">Explorador</option>
+                    </select>
+                </li>
+                <li>
+                    <h3>Sub clase</h3>
+                    <input type="text" id="subclase"  class="completo"/>
+                </li>
+                <li>
+                    <h3>Alineación</h3>
+                    <input type="text" id="alineacion"  class="completo"/>
+                </li>
+                <li>
+                    <h3>Puntos de experiencia</h3>
+                    <input type="number" id="experiencia"  class="completo"/>
+                </li>
+                <li>
+                    <h3>Nombre del jugador</h3>
+                    <input type="text" id="nombreJugador"  class="completo"/>
+                </li>
             </ul>
         </div>
         <div display: inline-block id="Caracteristicas">
@@ -69,13 +79,18 @@
                 <!--
                     Enanos de las montañas +2
                 -->
-                <li>Destreza</li>
-                <input type="number" id="destreza"/>
+                <li>
+                    <h3>Destreza</h3>
+                    <input type="number" id="destreza" class="modificable"/>
+                </li>
                 <!-- Modificadores Destreza
                     Elfos +2
+                    Medianos +2
                 -->
-                <li>Constitución</li>
-                <input type="number" id="constitucion"/>
+                <li>
+                    <h3>Constitución</h3>
+                    <input type="number" id="constitucion" class="modificable"/>
+                </li>
                 <!--
                     Enanos +2
                 -->
@@ -90,9 +105,21 @@
                     Enano de las colinas +1
                     Elfo del bosque +1
                 -->
+<<<<<<< HEAD
                 <li>Carisma</li>
                 <input type="number" id="carisma"/>
 
+=======
+                <li>
+                <h3>Carisma</h3>
+                <input type="number" id="carisma" class="modificable"/>
+                <p class="modificador" id="carisma">= 8</p>
+                </li>
+                <!-- Modifcadores carisma
+                    Elfo drow +1
+                    Mediano piesligero +1
+                -->
+>>>>>>> 1003e84d61706cb5819e9b0e8b3a787ae309c9fd
             </ul>
         </div>
         <div inline-block id= Modificadores>
@@ -140,29 +167,42 @@
         <div id="Estado">
             <h2>Estado</h2>
             <ul>
-                <li>Clase de armadura</li>
-                <input id="claseDeArmadura"/>
-                <li>Iniciativa</li>
-                <input type="number" id="iniciativa"/>
-                <li>Velocidad</li>
-                <input type="number" id="velocidad"/>
+                <li>
+                    <h3>Clase de armadura</h3>
+                    <input id="claseDeArmadura"/>
+                </li>
+                <li>
+                    <h3>Iniciativa</h3>
+                    <input type="number" id="iniciativa"/>
+                </li>
+                <li>
+                    <h3>Velocidad</h3>
+                    <input type="number" id="velocidad"/>
+                </li>
                 <!--
                     Enanos: 25 pies
                         Su velocidad no se reduce al llevar armadura pesada
                     Elfos: 30 pies
                         Elfo del bosque: 35 pies
+                    Medianos: 25 pies
                 -->
-                <li>Vida máxima</li>
-                <input type="number" id="vidaMaxima"/>
+                <li>
+                    <h3>Vida máxima</h3>
+                    <input type="number" id="vidaMaxima"/>
+                </li>
                 <!--Modificadores vida máxima
                     Enano de las colinas:
                         +1 plano.
                         +1 por cada nivel (a partir del nivel 2)
                 -->
-                <li>Vida actual</li>
-                <input type="number" id="vidaActual"/>
-                <li>Hit dice</li>
-                <input type="number" id="hitDice"/>
+                <li>
+                    <h3>Vida actual</h3>
+                    <input type="number" id="vidaActual"/>
+                </li>
+                <li>
+                    <h3>Hit dice</h3>
+                    <input type="number" id="hitDice"/>
+                </li>
                 <li>Tiradas de salvación</li>
                 <li>Visión</li>
                 <!--Visiones
@@ -216,39 +256,64 @@
         <div id="Equipamiento">
             <h2>Equipamiento</h2>
             <ul>
-                <li>Monedas de oro</li>
-                <input type="number" id="monedasDeOro"/>
-                <li>Monedas de plata</li>
-                <input type="number" id="monedasDePlata"/>
-                <li>Monedas de cobre</li>
-                <input type="number" id="monedasDeCobre"/>
-
+                <li>
+                    <h3>Monedas de oro</h3>
+                    <input type="number" id="monedasDeOro"/>
+                </li>
+                <li>
+                    <h3>Monedas de plata</h3>
+                    <input type="number" id="monedasDePlata"/>
+                </li>
+                <li>
+                    <h3>Monedas de cobre</h3>
+                    <input type="number" id="monedasDeCobre"/>
+                </li>
             </ul>
         </div>
 
         <div id="Personalización">
             <h2>Personalización</h2>
             <ul>
-                <li>Edad</li>
+                <li>
+                    <h3>Edad</h3>
+                    <input type="number" id="edad"/>
+                </li>
                 <!--Edades máximas según razas:
                 -Enano: 400
                 -Elfo: 700 (adulto a los 100)
+                -Mediano: 150 (adulto a los 20)
                 -->
-                <input type="number" id="edad"/>
-                <li>Altura</li>
-                <input id="altura"/>
+                <li>
+                    <h3>Altura</h3>
+                    <input id="altura"/>
+                </li>
                 <!--
                     Elfos: entre 1.5m y 1.8m
+                    Medianos: alrededor de 0.9m
                 -->
-                <li>Peso</li>
-                <input type="number" id="peso"/>
-                <li>Ojos</li>
-                <input type="text" id="ojos"/>
-                <li>Piel</li>
-                <input type="text" id="piel"/>
-                <li>Cabello</li>
-                <input type="text" id="cabello"/>
+                <li>
+                    <h3>Peso</h3>
+                    <input type="number" id="peso"/>
+                </li>
+                <!--Peso
+                    Mediano: poco más de 18kg
+                -->
+                <li>
+                    <h3>Ojos</h3>    
+                    <input type="text" id="ojos"/>
+                </li>
+                <li>
+                    <h3>Piel</h3>
+                    <input type="text" id="piel"/>
+                </li>
+                <li>
+                    <h3>Cabello</h3>
+                    <input type="text" id="cabello"/>
+                </li>
             </ul>
+        </div>
+        <div id="Tips">
+            <h2>Tips para tu personaje</h2>
         </div>
 
         <a href= "historia.html"> Click para ir a la Historia </a>
@@ -266,7 +331,8 @@
         };
         firebase.initializeApp(config);
         </script>
-
+        <script src="clasesYRazas.js"></script>
+        <script src="ayuda.js"></script>
         <script src="principalScript.js"></script>
     </body>
 </html>

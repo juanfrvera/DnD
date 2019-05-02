@@ -1,6 +1,60 @@
 // Sección dedicada a las artes magicas
 // mensaje del dia: "Que puede salir mal?"
 
+function LoadHechizos(){
+  var texto = [];
+  switch (clase) {
+  case "bardo":
+    for (var i = 0; i < spellsBardo.length; i+=1) {
+      texto.push(spellsBardo[i]);
+    }
+    break;
+  case "clerigo":
+    for (var i = 0; i < spellsClerigo.length; i+=1) {
+        texto.push(spellsClerigo[i]);
+    }
+    break;
+  case "druida":
+    for (var i = 0; i < spellsDruida.length; i+=1) {
+      texto.push(spellsDruida[i]);
+    }
+    break;
+  case "paladin":
+    for (var i = 0; i < spellsPaladines.length; i+=1) {
+      texto.push(spellsPaladines[i]);
+    }
+    break;
+  case "explorador":
+    for (var i = 0; i < spellsExplorador.length; i+=1) {
+      texto.push(spellsExplorador[i]);
+    }
+    break;
+  case "mago":
+    for (var i = 0; i < spellsMago.length; i+=1) {
+      texto.push(spellsMago[i]);
+    }
+    break;
+  case "brujo":
+    for (var i = 0; i < spellsBrujo.length; i+=1) {
+      texto.push(spellsBrujo[i]);
+    }
+    break;
+  case "hechicero":
+    for (var i = 0; i < spellsHechicero.length; i+=1) {
+      texto.push(spellsHechicero[i]);
+    }
+    break;
+  default:
+    texto = "Los hechizos de esta clases están en construcción";
+    break;
+  }
+  return texto;
+}
+
+function MostrarHechizos(){
+  document.getElementById("areaHechizos").value = LoadHechizos();
+}
+
 // Magia para bardos
 //--Cantrips
 var spellsBardo = [ 'blade ward', 'dancing lights', 'friends', 'mage hand', 'mending', 'message', 'minor illusion', 'presdigitation', 'true strike', 'vicious mockery',
@@ -48,7 +102,3 @@ var spellsBrujo = ['blade ward', 'chill touch', 'eldritch blast', 'fiends', 'mag
 var spellsMago = ['acid splash', 'blade ward', 'chill tocuh', 'dancing lights', 'fire bolt', 'friends', 'light', 'mage hand', 'mending', 'message', 'minor illusion', 'poison spray', 'prestidigitation', 'ray of frost', 'shocking grasp', 'true strike',
 //lvl1
 'alarm', 'burning hands', 'charm person', 'chromatic orb', 'color spray', 'comprehend lenguages', 'detect magic', 'disguise self', 'expeditious retreat', 'false life', 'feather fall', 'find familiar', 'fog cloud', 'grease', 'identify', 'illusory script', 'jump', 'longstrider', 'mage armor', 'magic missile', 'protection form evil and good', 'ray of sickness', 'shield', 'silent image', 'sleep', 'tasha hideous laughter', 'tenser floating disk', 'thunderwave', 'unseen servant', 'witch bolt']
-
-//function MostrarHechizos() {
-  //var razaSeleccionada = document.getElementsByName("raza");
-  //alert("hechizos disponibles: "+spellsMago);}

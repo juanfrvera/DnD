@@ -1,3 +1,68 @@
+var cantidadHabilidades;
+var divHabilidades;
+//Muestra las habilidades elegibles por la clase junto con checkbox para elegir
+function ElegirHabilidades(){
+    //Obtener cantidad de habilidades elegibles según la clase
+    cantidadHabilidades = eval(clase+'Cantidad');
+    //Obtener referencia al div de habilidadess
+    divHabilidades = document.getElementById("Habilidades");
+    divHabilidades.innerHTML = '<h2>Habilidades<h2/>';
+    divHabilidades.innerHTML = '<p>Como eres un '+clase+' puedes elegir '+
+    cantidadHabilidades+' de las siguientes habilidades: </p>';
+    divHabilidades.innerHTML += '<ul id="listaHabilidades"></ul>';
+    var ul = document.getElementById("listaHabilidades");
+    //Obtener lista de indices según la clase
+    var indicesClase = eval(clase+'Habilidades');
+    var habilidadesElegibles = [];
+    //Que la lista proveída por la clase no tenga habilidades significa que puede elgir de la lista completa
+    if(indicesClase.length == 0)
+        habilidadesElegibles = habilidades;
+    else{
+        for(let i = 0; i < indicesClase.length; i++){
+            habilidadesElegibles.push(habilidades[indicesClase[i]]);
+        }
+    }
+
+    habilidadesElegibles.forEach(function(habilidad){
+        ul.innerHTML+='<li><input class="checkbox" name="habilidad" type="checkbox" value="'+habilidad+'">'+habilidad+'</li>'
+    });
+
+    divHabilidades.innerHTML += '<button onclick="AceptarHabilidades()">Aceptar</button>'
+}
+
+//Acepta las habilidades elegidas
+function AceptarHabilidades(){
+    var checkboxes = document.getElementsByName("habilidad");
+    var habilidadesElegidas = 0;
+    listaHabilidades = [];
+    checkboxes.forEach(function(checkbox){
+        if(checkbox.checked){
+            habilidadesElegidas += 1;
+            listaHabilidades.push(checkbox.value);
+        }
+    })
+    if(habilidadesElegidas == cantidadHabilidades){
+       EscribirHabilidades();
+    }
+    else
+        alert("Por favor elige "+cantidadHabilidades+" habilidades.");
+}
+
+//Escribe las habilidades que han sido elegidas en la planilla
+function EscribirHabilidades(){
+    divHabilidades = document.getElementById("Habilidades");
+
+    divHabilidades.innerHTML = '<h2>Habilidades</h2>';
+    divHabilidades.innerHTML += '<ul id="listaHabilidades"></ul>';
+    var ul = document.getElementById("listaHabilidades");
+
+    listaHabilidades.forEach(function(habilidad){
+        ul.innerHTML += '<li>'+habilidad+'</li>';
+    })
+
+    divHabilidades.innerHTML += '<button onclick="ElegirHabilidades()">Cambiar</button>';
+}
+
 //Cada clase puede tener ciertas Habilidades
 var habilidades = [
     'Acrobacias (Destreza)',//0

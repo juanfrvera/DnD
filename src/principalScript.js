@@ -1,7 +1,7 @@
 var inputs =
 [
     //--Principales
-    'nombrePersonaje','subraza','subclase','alineacion','experiencia','nombreJugador',
+    'nombrePersonaje','subclase','alineacion','experiencia','nombreJugador',
     //--Cualidades
     'fuerza','destreza','constitucion','inteligencia','sabiduria','carisma',
     //--modificadorDestreza
@@ -21,38 +21,40 @@ var inputs =
     'idiomaConocido1','idiomaConocido2',
     //--Otras capacidades
     'sabiduriaPasiva','capacidades'
-
-]
-var selects =
-[
-    'raza','clase'
 ]
 var listaHabilidades = "";
 
 //Cuando todos los elementos de la página fueron cargados
 window.onload = function(){
     inputs.forEach(function(nombre){Cargar(nombre)});
-    selects.forEach(function(nombre){Cargar(nombre)});
+    raza = Cargar('raza');
+    CargarSubRazas();//Cargar en este orden para que quede bien
+    subraza = Cargar('subraza');
+    clase = Cargar('clase');
     CargarArmas();
     listaHabilidades = localStorage.getItem("listaHabilidades");
     if(listaHabilidades != "null" && listaHabilidades.length > 0){
         listaHabilidades = listaHabilidades.split(",");
         EscribirHabilidades();
     }
-
-    //eval(document.getElementById('clase').value + 'Cantidad') );
+    CargarAyudas();
+    ActualizarTips();
+    EnlazarModificadores();
 }
 
 //Al actualizar o cerrar la página guardar
 window.onbeforeunload = function(){
     inputs.forEach(function(nombre){Guardar(nombre)});
-    selects.forEach(function(nombre){Guardar(nombre)});
+    Guardar('raza');
+    Guardar('subraza');
+    Guardar('clase');
     GuardarArmas();
     localStorage.setItem("listaHabilidades",listaHabilidades);
 
     return null;
 }
 
+<<<<<<< HEAD
 var cantidadHabilidades;
 var divHabilidades;
 
@@ -122,12 +124,15 @@ function EscribirHabilidades(){
     divHabilidades.innerHTML += '<button onclick="ElegirHabilidades()">Cambiar</button>';
 }
 
+=======
+>>>>>>> 1003e84d61706cb5819e9b0e8b3a787ae309c9fd
 var cantidadArmas = 1;
 var ulArmas;
 function AgregarArma(){
     GuardarArmas();
 
     cantidadArmas++;
+    var li = document.createElement("li");
     ulArmas.innerHTML += "<li>"+
         "<h3>Arma "+cantidadArmas+"</h3>"+
         '<input type="text" id="nombreArma'+cantidadArmas+'"/ >'+
@@ -141,17 +146,16 @@ function AgregarArma(){
 }
 function QuitarArma(){
     if(cantidadArmas > 1){
-        localStorage.removeItem("nombreArma"+cantidadArmas);
-        localStorage.removeItem("ataqueArma"+cantidadArmas);
-        localStorage.removeItem("tipoArma"+cantidadArmas);
+      localStorage.removeItem("nombreArma"+cantidadArmas);
+      localStorage.removeItem("ataqueArma"+cantidadArmas);
+      localStorage.removeItem("tipoArma"+cantidadArmas);
 
-        cantidadArmas--;
-        alert("Por favor actualiza para borrar el arma por completo");
+      cantidadArmas--;
+      document.location.reload();
     }
     else
         alert("No se puede eliminar la primera arma");
 }
-
 function CargarArmas(){
     ulArmas = document.getElementById("listaDeArmas");
 
@@ -178,59 +182,63 @@ function GuardarArmas(){
         localStorage.setItem("tipoArma"+i,document.getElementById("tipoArma"+i).value);
     }
 }
+//Carga las sub razas en el select de subrazas
+function CargarSubRazas(){
+  var select = document.getElementById("subraza");
 
-function LoadHechizos(){
-  var clase = document.getElementById("clase").value;
-  var texto = [];
-  switch (clase) {
-  case "bardo":
-    for (var i = 0; i < spellsBardo.length; i+=1) {
-      texto.push(spellsBardo[i]);
-    }
-    break;
-  case "clerigo":
-    for (var i = 0; i < spellsClerigo.length; i+=1) {
-        texto.push(spellsClerigo[i]);
-    }
-    break;
-  case "druida":
-    for (var i = 0; i < spellsDruida.length; i+=1) {
-      texto.push(spellsDruida[i]);
-    }
-    break;
-  case "paladin":
-    for (var i = 0; i < spellsPaladines.length; i+=1) {
-      texto.push(spellsPaladines[i]);
-    }
-    break;
-  case "explorador":
-    for (var i = 0; i < spellsExplorador.length; i+=1) {
-      texto.push(spellsExplorador[i]);
-    }
-    break;
-  case "mago":
-    for (var i = 0; i < spellsMago.length; i+=1) {
-      texto.push(spellsMago[i]);
-    }
-    break;
-  case "brujo":
-    for (var i = 0; i < spellsBrujo.length; i+=1) {
-      texto.push(spellsBrujo[i]);
-    }
-    break;
-  case "hechicero":
-    for (var i = 0; i < spellsHechicero.length; i+=1) {
-      texto.push(spellsHechicero[i]);
-    }
-    break;
+  select.options.length = 0;
+  
+  var subrazas = Variable(raza,"SubRazas");
+
+  for (let index = 0; index < subrazas.length; index++) {
+    const element = subrazas[index];
+    select.options[select.options.length] = new Option(subrazas[index], subrazas[index]);
   }
-  return texto;
+}
+var raza, subraza, clase;
+function RazaCambiada(select){
+  raza = select.value;
+  ActualizarTips();
+  CargarSubRazas();
+}
+function ClaseCambiada(select){
+  clase = select.value;
+  ActualizarTips();
+}
+function SubRazaCambiada(select){
+  subraza = select.value;
+  ActualizarTips();
+  EnlazarModificadores();
 }
 
-function MostrarHechizos(){
-  document.getElementById("areaHechizos").value = LoadHechizos();
+function EnlazarModificadores(){
+  var modificables = document.getElementsByClassName("modificable");
+  var modificadoresRaza = [];
+  try{modificadoresRaza = Variable(raza,"Modificadores");}
+  catch{console.log("No hay modificadores definidos para "+raza);}
+  var modificadoresSubRaza = [];
+  try{modificadoresSubRaza = Variable(raza,subraza,"Modificadores");}
+  catch{console.log("No hay modificador definido para "+subraza);}
+  for(let i = 0; i < modificables.length; i++) {
+    var elemento = modificables[i];
+    var nombre = elemento.id;
+    var modificador = modificadoresSubRaza[nombre];
+    //Si no se encontró modificador en la subraza, buscar en la raza
+    if(modificador == undefined){
+      modificador = modificadoresRaza[nombre];
+      if(modificador == undefined)
+        modificador = 0;
+    }
+    //Si no hay un resultado creado
+    var resultado = elemento.parentNode.lastElementChild;
+    //Si no había un resultado creado, crearlo
+    if(resultado.className != "modificador"){
+      resultado = document.createElement("p");
+      resultado.className = "modificador";
+      elemento.parentNode.appendChild(resultado);
+    }
+    resultado.innerHTML = ("+ "+modificador+" = ") + (parseInt(elemento.value) + modificador);
+    elemento.onchange = function(){resultado.innerHTML = ("+ "+modificador+" = ") + (parseInt(elemento.value) + modificador);};
+  }
 }
-
-  //document.getElementById("textToEncode").innerHTML = texto;
-  //for (var i = 0; i < miArray.length; i+=1) {
-  //console.log("En el índice '" + i + "' hay este valor: " + miArray[i]);
+function MostrarModificadores(){}
