@@ -18,15 +18,20 @@ function MostrarAyuda(){
   var elemento = this;
   var ayuda = undefined;
   
-  try{ayuda = eval("ayuda"+raza)[elemento.id];}
-  //Si no existe array de ayuudas para esta clase
-  catch{ayuda=undefined;}
-  //Si no hay ayuda específica para esa clase
+  //Primero buscar ayuda en subraza
+  ayuda = eval("ayuda"+raza+subraza)[elemento.id];
+  if(ayuda == undefined){
+    try{ayuda = eval("ayuda"+raza)[elemento.id];}
+    //Si no existe array de ayudas para esta raza
+    catch{ayuda=undefined;}
+  }
+  //Si no hay ayuda específica para esa raza
   if(ayuda == undefined){
     //Cargar ayuda general
     ayuda = ayudas[elemento.id];
   }
-  elemento.parentNode.insertBefore(elementoAyuda, elemento.nextSibling);
+  //Esto es porque hay que subir al li, y de ahí, al ul
+  elemento.parentNode.appendChild(elementoAyuda);//, elemento.parentNode.nextSibling);
   elementoAyuda.innerHTML = ayuda;
 }
 function ActualizarTips(){
@@ -35,20 +40,19 @@ function ActualizarTips(){
     var ulTips = document.createElement("UL");
     ulTips.id="listaDeTips";
     divTips.appendChild(ulTips);
-    try {
-        var tips = eval("tips"+raza);
-        tips.forEach(tip => {
-            var node = document.createElement("LI");// Create a <li> node
-            var textnode = document.createTextNode(tip);// Create a text node
-            node.appendChild(textnode);                              // Append the text to <li>
-            ulTips.appendChild(node);     // Append <li> to <ul>
-        });
-    } catch {//No están hechos los tips para esta raza
-        var node = document.createElement("LI");                 // Create a <li> node
-        var textnode = document.createTextNode("No están cargados los tips de esta raza");// Create a text node
-        node.appendChild(textnode);                              // Append the text to <li>
-        ulTips.appendChild(node);     // Append <li> to <ul>
+    function CrearTip(tip){
+      var node = document.createElement("LI");// Create a <li> node
+      var textnode = document.createTextNode(tip);// Create a text node
+      node.appendChild(textnode);                              // Append the text to <li>
+      ulTips.appendChild(node);     // Append <li> to <ul>
     }
+    try {eval("tips"+raza).forEach(tip => {CrearTip(tip)});}
+    catch {//No están hechos los tips para esta raza
+        CrearTip("No están cargados los tips de esta raza");// Create a text node
+    }
+    try{eval("tips"+raza+subraza).forEach(tip => {CrearTip(tip)});}
+    catch{CrearTip("No están hechos los tips de esta subraza.");}
+
 }
 var tipsmediano = [
     "Suertudo: "+
@@ -58,10 +62,17 @@ var tipsmediano = [
     "Valiente: Tienes ventaja en las tiradas de salvación en contra de ser asustado.",
     "Agilidad Mediana: Puedes moverte a través del espacio de cualquier criatura que sea de un tamaño mayor que el tuyo."
 ];
+var tipsmedianopiesLigeros = [
+  "Sigiloso por Naturaleza: Puedes intentar esconderte incluso cuando solamente estás cubierto tras una criatura que"+
+  " es al menos un tamaño mayor que tú."
+];
 var ayudas = {
     nombrePersonaje: "El nombre de tu personaje, ejemplo Chicho",
     alineacion: "Tu personaje es bueno o malo?",
     nombreJugador: "Tu nombre, como por ejemplo: Lau o luxlp",
+    //Características
+    destreza:"Que tan ágil eres",
+    carisma:"Facilidad de trato",
     //Monedas
     monedasDeOro: "Entregá tu tesorito ;)",
     monedasDeCobre: "Si juntas 10, llegas a una moneda de plata",
@@ -75,6 +86,8 @@ var ayudas = {
     alineacion:"Los medianos son una gente afable y alegre. Aprecian las bondades de la familia y la amistad."+
     " Sienten lástima fácilmente y odian ver a cualquier ser vivo sufriendo."+
     " Son generosos, y no tendrán ningún problema en compartir sus bienes incluso en tiempos difíciles",
+    //Característica
+    destreza:"Medianos + 2 en destreza.",
     //Monedas
     monedasDeOro:"Incluso el más rico de los medianos mantiene sus tesoros bajo llave en una bodega en lugar de mostrarlos"+
     "a la vista de todos",
@@ -83,3 +96,6 @@ var ayudas = {
     piel:"La piel de los medianos va desde la tez morena a la pálida con tonos sonrosados",
     cabello:"El pelo de los medianos es normalmente castaño o  castaño claro y ondulado"
   };
+  var ayudamedianopiesLigeros = {
+    carisma:"Medianos pies ligeros +1 en carisma"
+  }

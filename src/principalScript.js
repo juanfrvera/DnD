@@ -1,7 +1,7 @@
 var inputs =
 [
     //--Principales
-    'nombrePersonaje','subraza','subclase','alineacion','experiencia','nombreJugador',
+    'nombrePersonaje','subclase','alineacion','experiencia','nombreJugador',
     //--Cualidades
     'fuerza','destreza','constitucion','inteligencia','sabiduria','carisma',
     //--Cualidades de salvación
@@ -19,28 +19,23 @@ var inputs =
     'idiomaConocido1','idiomaConocido2',
     //--Otras capacidades
     'sabiduriaPasiva','capacidades'
-
-]
-var selects =
-[
-    'raza','clase'
 ]
 var listaHabilidades = "";
 
 //Cuando todos los elementos de la página fueron cargados
 window.onload = function(){
     inputs.forEach(function(nombre){Cargar(nombre)});
-    selects.forEach(function(nombre){Cargar(nombre)});
+    raza = Cargar('raza');
+    CargarSubRazas();//Cargar en este orden para que quede bien
+    subraza = Cargar('subraza');
+    clase = Cargar('clase');
     CargarArmas();
     listaHabilidades = localStorage.getItem("listaHabilidades");
     if(listaHabilidades != "null" && listaHabilidades.length > 0){
         listaHabilidades = listaHabilidades.split(",");
         EscribirHabilidades();
     }
-
     CargarAyudas();
-    raza = document.getElementById("raza").value;
-    clase = document.getElementById("clase").value;
     ActualizarTips();
     EnlazarModificadores();
 }
@@ -48,77 +43,13 @@ window.onload = function(){
 //Al actualizar o cerrar la página guardar
 window.onbeforeunload = function(){
     inputs.forEach(function(nombre){Guardar(nombre)});
-    selects.forEach(function(nombre){Guardar(nombre)});
+    Guardar('raza');
+    Guardar('subraza');
+    Guardar('clase');
     GuardarArmas();
     localStorage.setItem("listaHabilidades",listaHabilidades);
 
     return null;
-}
-
-var cantidadHabilidades;
-var divHabilidades;
-
-//Muestra las habilidades elegibles por la clase junto con checkbox para elegir
-function ElegirHabilidades(){
-    //Obtener cantidad de habilidades elegibles según la clase
-    cantidadHabilidades = eval(clase+'Cantidad');
-    //Obtener referencia al div de habilidadess
-    divHabilidades = document.getElementById("Habilidades");
-    divHabilidades.innerHTML = '<h2>Habilidades<h2/>';
-    divHabilidades.innerHTML = '<p>Como eres un '+clase+' puedes elegir '+
-    cantidadHabilidades+' de las siguientes habilidades: </p>';
-    divHabilidades.innerHTML += '<ul id="listaHabilidades"></ul>';
-    var ul = document.getElementById("listaHabilidades");
-    //Obtener lista de indices según la clase
-    var indicesClase = eval(clase+'Habilidades');
-    var habilidadesElegibles = [];
-    //Que la lista proveída por la clase no tenga habilidades significa que puede elgir de la lista completa
-    if(indicesClase.length == 0)
-        habilidadesElegibles = habilidades;
-    else{
-        for(let i = 0; i < indicesClase.length; i++){
-            habilidadesElegibles.push(habilidades[indicesClase[i]]);
-        }
-    }
-
-    habilidadesElegibles.forEach(function(habilidad){
-        ul.innerHTML+='<li><input class="checkbox" name="habilidad" type="checkbox" value="'+habilidad+'">'+habilidad+'</li>'
-    });
-
-    divHabilidades.innerHTML += '<button onclick="AceptarHabilidades()">Aceptar</button>'
-}
-
-//Acepta las habilidades elegidas
-function AceptarHabilidades(){
-    var checkboxes = document.getElementsByName("habilidad");
-    var habilidadesElegidas = 0;
-    listaHabilidades = [];
-    checkboxes.forEach(function(checkbox){
-        if(checkbox.checked){
-            habilidadesElegidas += 1;
-            listaHabilidades.push(checkbox.value);
-        }
-    })
-    if(habilidadesElegidas == cantidadHabilidades){
-       EscribirHabilidades();
-    }
-    else
-        alert("Por favor elige "+cantidadHabilidades+" habilidades.");
-}
-
-//Escribe las habilidades que han sido elegidas en la planilla
-function EscribirHabilidades(){
-    divHabilidades = document.getElementById("Habilidades");
-
-    divHabilidades.innerHTML = '<h2>Habilidades</h2>';
-    divHabilidades.innerHTML += '<ul id="listaHabilidades"></ul>';
-    var ul = document.getElementById("listaHabilidades");
-
-    listaHabilidades.forEach(function(habilidad){
-        ul.innerHTML += '<li>'+habilidad+'</li>';
-    })
-
-    divHabilidades.innerHTML += '<button onclick="ElegirHabilidades()">Cambiar</button>';
 }
 
 var cantidadArmas = 1;
@@ -151,7 +82,6 @@ function QuitarArma(){
     else
         alert("No se puede eliminar la primera arma");
 }
-
 function CargarArmas(){
     ulArmas = document.getElementById("listaDeArmas");
 
@@ -178,61 +108,6 @@ function GuardarArmas(){
         localStorage.setItem("tipoArma"+i,document.getElementById("tipoArma"+i).value);
     }
 }
-
-function LoadHechizos(){
-  var texto = [];
-  switch (clase) {
-  case "bardo":
-    for (var i = 0; i < spellsBardo.length; i+=1) {
-      texto.push(spellsBardo[i]);
-    }
-    break;
-  case "clerigo":
-    for (var i = 0; i < spellsClerigo.length; i+=1) {
-        texto.push(spellsClerigo[i]);
-    }
-    break;
-  case "druida":
-    for (var i = 0; i < spellsDruida.length; i+=1) {
-      texto.push(spellsDruida[i]);
-    }
-    break;
-  case "paladin":
-    for (var i = 0; i < spellsPaladines.length; i+=1) {
-      texto.push(spellsPaladines[i]);
-    }
-    break;
-  case "explorador":
-    for (var i = 0; i < spellsExplorador.length; i+=1) {
-      texto.push(spellsExplorador[i]);
-    }
-    break;
-  case "mago":
-    for (var i = 0; i < spellsMago.length; i+=1) {
-      texto.push(spellsMago[i]);
-    }
-    break;
-  case "brujo":
-    for (var i = 0; i < spellsBrujo.length; i+=1) {
-      texto.push(spellsBrujo[i]);
-    }
-    break;
-  case "hechicero":
-    for (var i = 0; i < spellsHechicero.length; i+=1) {
-      texto.push(spellsHechicero[i]);
-    }
-    break;
-  default:
-    texto = "Los hechizos de esta clases están en construcción";
-    break;
-  }
-  return texto;
-}
-
-function MostrarHechizos(){
-  document.getElementById("areaHechizos").value = LoadHechizos();
-}
-
 //Carga las sub razas en el select de subrazas
 function CargarSubRazas(){
   var select = document.getElementById("subraza");
@@ -243,7 +118,7 @@ function CargarSubRazas(){
 
   for (let index = 0; index < subrazas.length; index++) {
     const element = subrazas[index];
-    select.options[select.options.length] = new Option(subrazas[index], index);
+    select.options[select.options.length] = new Option(subrazas[index], subrazas[index]);
   }
 }
 var raza, subraza, clase;
@@ -256,24 +131,32 @@ function ClaseCambiada(select){
   clase = select.value;
   ActualizarTips();
 }
-function SubRazaCambiada(select){
-
-}
+function SubRazaCambiada(select){}
 
 function EnlazarModificadores(){
   var modificables = document.getElementsByClassName("modificable");
+  var modificadoresRaza = eval(raza+"Modificadores");
   var modificadoresSubRaza = eval(subraza+"Modificadores");
-  for(var i = 0; i < modificables.length; i++) {
+  for(let i = 0; i < modificables.length; i++) {
     var elemento = modificables[i];
     var nombre = elemento.parentNode.firstElementChild.innerHTML;
     var modificador = modificadoresSubRaza[nombre];
-    if(modificador != undefined){
-      var resultado = document.createElement("p");
-      element.parentNode.appendChild(resultado);
-      elemento.onchange = function(){resultado.innerHTML = " + 1 = " + (parseInt(elemento.value) + modificador);};
+    //Si no se encontró modificador en la subraza, buscar en la raza
+    if(modificador == undefined){
+      modificador = modificadoresRaza[nombre];
+      if(modificador == undefined)
+        modificador = 0;
     }
+    //Si no hay un resultado creado
+    var resultado = elemento.parentNode.lastElementChild;
+    //Si no había un resultado creado, crearlo
+    if(resultado.className != "modificador"){
+      resultado = document.createElement("p");
+      resultado.className = "modificador";
+      elemento.parentNode.appendChild(resultado);
+    }
+    resultado.innerHTML = ("+ "+modificador+" = ") + (parseInt(elemento.value) + modificador);
+    elemento.onchange = function(){resultado.innerHTML = ("+ "+modificador+" = ") + (parseInt(elemento.value) + modificador);};
   }
 }
-function MostrarModificadores(){
-
-}
+function MostrarModificadores(){}
