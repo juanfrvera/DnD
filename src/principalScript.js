@@ -4,6 +4,8 @@ var inputs =
     'nombrePersonaje','subraza','subclase','alineacion','experiencia','nombreJugador',
     //--Cualidades
     'fuerza','destreza','constitucion','inteligencia','sabiduria','carisma',
+    //--modificadorDestreza
+    'modificadorFuerza','modificadorDestreza','modificadorConstitucion','modificadorInteligencia','modificadorSabiduria','modificadorCarisma',
     //--Cualidades de salvación
     'fuerzaSalvacion','destrezaSalvacion','constitucionSalvacion',
     'inteligenciaSalvacion','sabiduriaSalvacion','carismaSalvacion',

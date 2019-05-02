@@ -61,7 +61,7 @@
                 <input type="text" id="nombreJugador"  class="completo"/>
             </ul>
         </div>
-        <div id="Caracteristicas">
+        <div display: inline-block id="Caracteristicas">
             <h2>Características</h2>
             <ul>
                 <li>Fuerza</li>
@@ -92,11 +92,32 @@
                 -->
                 <li>Carisma</li>
                 <input type="number" id="carisma"/>
-                <!-- Modifcadores carisma
-                    Elfo drow +1
-                -->
+
             </ul>
         </div>
+        <div inline-block id= Modificadores>
+          <h2> Modificadores </h2>
+          <ul>
+              <li>Modificador de Fuerza</li>
+              <input type="number" id="modificadorFuerza"/>
+
+              <li>Modificador de Destreza</li>
+              <input type="number" id="modificadorDestreza"/>
+
+              <li>Modificador de Constitución</li>
+              <input type="number" id="modificadorConstitucion"/>
+
+              <li>Modificador de Inteligencia</li>
+              <input type="number" id="modificadorInteligencia"/>
+
+              <li>Modificador de Sabiduría</li>
+              <input type="number" id="modificadorSabiduria"/>
+
+              <li>Modificador de Carisma</li>
+              <input type="number" id="modificadorCarisma"/>
+          </ul>
+        </div>
+
         Inspiración
         Bono de proeficiencia
         <div id="TiradasDeSalvacion">
@@ -171,7 +192,7 @@
 
         <div id="Hechizos">
             <h2>Hechizos</h2>
-            
+
             <textarea id="listaHechizos" ></textarea>
             <button onclick= "MostrarHechizos()">Mostrar Hechizos</button>
             <textarea id="areaHechizos"></textarea>
