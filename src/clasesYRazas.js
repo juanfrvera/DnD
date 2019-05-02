@@ -1,6 +1,6 @@
 var enanoSubRazas = ["De las colinas", "De las montañas"];
 //Medianos
-var medianoSubRazas = ["PiesLigeros","Fornido"];
+var medianoSubRazas = ["Pies ligeros","Fornido"];
 var medianoModificadores =
 {
     destreza : 2
@@ -23,3 +23,16 @@ var humanoModificadores = {
     sabiduria : 1,
     carisma : 1
 }
+//Dracónido
+var draconidoModificadores = {
+    fuerza : 2,
+    carisma : 1,
+    velocidad : 30
+}
+draconidoSubRazas = ["Azul","Blanco","Bronce","Cobre","Latón","Negro","Oro","Plata","Rojo","Verde"]
+//Gnomos
+var gnomoModificadores = {
+    inteligencia : 2,
+    velocidad : 25
+}
+var gnomoSubRazas = ["Gnomo de los bosques","Gnomo de las rocas"];

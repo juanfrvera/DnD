@@ -27,11 +27,11 @@ button{
 }
 /*Modificables son los inputs a los cuales se puede hacerles +1 +2 etc*/
 input.modificable{
-    width:79%;
+    width:75%;
 }
 .modificador{
     display:inline-block;
-    width:19%;
+    width:15%;
 }
 textarea {
   display : block;

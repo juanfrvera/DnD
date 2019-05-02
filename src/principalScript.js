@@ -114,7 +114,7 @@ function CargarSubRazas(){
 
   select.options.length = 0;
   
-  var subrazas = eval(raza+"SubRazas");
+  var subrazas = Variable(raza,"SubRazas");
 
   for (let index = 0; index < subrazas.length; index++) {
     const element = subrazas[index];
