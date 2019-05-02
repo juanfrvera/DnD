@@ -131,15 +131,23 @@ function ClaseCambiada(select){
   clase = select.value;
   ActualizarTips();
 }
-function SubRazaCambiada(select){}
+function SubRazaCambiada(select){
+  subraza = select.value;
+  ActualizarTips();
+  EnlazarModificadores();
+}
 
 function EnlazarModificadores(){
   var modificables = document.getElementsByClassName("modificable");
-  var modificadoresRaza = eval(raza+"Modificadores");
-  var modificadoresSubRaza = eval(subraza+"Modificadores");
+  var modificadoresRaza = [];
+  try{modificadoresRaza = Variable(raza,"Modificadores");}
+  catch{console.log("No hay modificadores definidos para "+raza);}
+  var modificadoresSubRaza = [];
+  try{modificadoresSubRaza = Variable(raza,subraza,"Modificadores");}
+  catch{console.log("No hay modificador definido para "+subraza);}
   for(let i = 0; i < modificables.length; i++) {
     var elemento = modificables[i];
-    var nombre = elemento.parentNode.firstElementChild.innerHTML;
+    var nombre = elemento.id;
     var modificador = modificadoresSubRaza[nombre];
     //Si no se encontró modificador en la subraza, buscar en la raza
     if(modificador == undefined){

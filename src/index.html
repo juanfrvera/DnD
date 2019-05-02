@@ -87,8 +87,10 @@
                     Elfos +2
                     Medianos +2
                 -->
-                <li>Constitución</li>
-                <input type="number" id="constitucion"/>
+                <li>
+                    <h3>Constitución</h3>
+                    <input type="number" id="constitucion" class="modificable"/>
+                </li>
                 <!--
                     Enanos +2
                 -->
@@ -136,12 +138,18 @@
         <div id="Estado">
             <h2>Estado</h2>
             <ul>
-                <li>Clase de armadura</li>
-                <input id="claseDeArmadura"/>
-                <li>Iniciativa</li>
-                <input type="number" id="iniciativa"/>
-                <li>Velocidad</li>
-                <input type="number" id="velocidad"/>
+                <li>
+                    <h3>Clase de armadura</h3>
+                    <input id="claseDeArmadura"/>
+                </li>
+                <li>
+                    <h3>Iniciativa</h3>
+                    <input type="number" id="iniciativa"/>
+                </li>
+                <li>
+                    <h3>Velocidad</h3>
+                    <input type="number" id="velocidad"/>
+                </li>
                 <!--
                     Enanos: 25 pies
                         Su velocidad no se reduce al llevar armadura pesada
@@ -149,15 +157,19 @@
                         Elfo del bosque: 35 pies
                     Medianos: 25 pies
                 -->
-                <li>Vida máxima</li>
-                <input type="number" id="vidaMaxima"/>
+                <li>
+                    <h3>Vida máxima</h3>
+                    <input type="number" id="vidaMaxima"/>
+                </li>
                 <!--Modificadores vida máxima
                     Enano de las colinas:
                         +1 plano.
                         +1 por cada nivel (a partir del nivel 2)
                 -->
-                <li>Vida actual</li>
-                <input type="number" id="vidaActual"/>
+                <li>
+                    <h3>Vida actual</h3>
+                    <input type="number" id="vidaActual"/>
+                </li>
                 <li>Hit dice</li>
                 <input type="number" id="hitDice"/>
                 <li>Tiradas de salvación</li>
@@ -213,42 +225,60 @@
         <div id="Equipamiento">
             <h2>Equipamiento</h2>
             <ul>
-                <li>Monedas de oro</li>
-                <input type="number" id="monedasDeOro"/>
-                <li>Monedas de plata</li>
-                <input type="number" id="monedasDePlata"/>
-                <li>Monedas de cobre</li>
-                <input type="number" id="monedasDeCobre"/>
+                <li>
+                    <h3>Monedas de oro</h3>
+                    <input type="number" id="monedasDeOro"/>
+                </li>
+                <li>
+                    <h3>Monedas de plata</h3>
+                    <input type="number" id="monedasDePlata"/>
+                </li>
+                <li>
+                    <h3>Monedas de cobre</h3>
+                    <input type="number" id="monedasDeCobre"/>
+                </li>
             </ul>
         </div>
 
         <div id="Personalización">
             <h2>Personalización</h2>
             <ul>
-                <li>Edad</li>
+                <li>
+                    <h3>Edad</h3>
+                    <input type="number" id="edad"/>
+                </li>
                 <!--Edades máximas según razas:
                 -Enano: 400
                 -Elfo: 700 (adulto a los 100)
                 -Mediano: 150 (adulto a los 20)
                 -->
-                <input type="number" id="edad"/>
-                <li>Altura</li>
-                <input id="altura"/>
+                <li>
+                    <h3>Altura</h3>
+                    <input id="altura"/>
+                </li>
                 <!--
                     Elfos: entre 1.5m y 1.8m
                     Medianos: alrededor de 0.9m
                 -->
-                <li>Peso</li>
-                <input type="number" id="peso"/>
+                <li>
+                    <h3>Peso</h3>
+                    <input type="number" id="peso"/>
+                </li>
                 <!--Peso
                     Mediano: poco más de 18kg
                 -->
-                <li>Ojos</li>
-                <input type="text" id="ojos"/>
-                <li>Piel</li>
-                <input type="text" id="piel"/>
-                <li>Cabello</li>
-                <input type="text" id="cabello"/>
+                <li>
+                    <h3>Ojos</h3>    
+                    <input type="text" id="ojos"/>
+                </li>
+                <li>
+                    <h3>Piel</h3>
+                    <input type="text" id="piel"/>
+                </li>
+                <li>
+                    <h3>Cabello</h3>
+                    <input type="text" id="cabello"/>
+                </li>
             </ul>
         </div>
         <div id="Tips">

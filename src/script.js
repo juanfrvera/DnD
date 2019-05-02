@@ -11,3 +11,16 @@ function Cargar(nombre){
 function Guardar(nombre){
     localStorage.setItem(nombre,document.getElementById(nombre).value);
 }
+
+const Capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+}
+function Variable(...nombres){
+    var cadena = nombres[0].toLowerCase();
+    for (let i = 1; i < nombres.length; i++) {
+        const nombre = nombres[i];
+        cadena += Capitalize(nombre);
+    }
+    return eval(cadena);
+}
