@@ -35,4 +35,10 @@ var gnomoCaracteristicas = {
     inteligencia : 2,
     velocidad : 25
 }
-var gnomoSubRazas = ["Gnomo de los bosques","Gnomo de las rocas"];
+var gnomoSubRazas = ["Del bosque","De la roca"];
+var gnomoDelBosqueCaracteristicas = {
+    destreza : 1
+}
+var gnomoDeLaRocaCaracteristicas = {
+    constitucion : 1
+}

@@ -55,21 +55,6 @@ function ActualizarTips(){
     catch{CrearTip("No están hechos los tips de esta subraza.");}
 
 }
-var tipsMediano = [
-    "Suertudo: "+
-    "Cuando obtienes un 1 en una tirada de ataque,"+
-    " prueba de característica o tirada de salvación, puedes volver"+
-    " a tirar el dado y debes usar la puntuación obtenida en la nueva tirada.",
-    "Valiente: Tienes ventaja en las tiradas de salvación en contra de ser asustado.",
-    "Agilidad Mediana: Puedes moverte a través del espacio de cualquier criatura que sea de un tamaño mayor que el tuyo."
-];
-var tipsMedianoPiesLigeros = [
-  "Sigiloso por Naturaleza: Puedes intentar esconderte incluso cuando solamente estás cubierto tras una criatura que"+
-  " es al menos un tamaño mayor que tú."
-];
-var tipsMedianoFornido = [
-  "Resistencia Fornida. Tienes ventaja en tiradas de salvación contra veneno, y tienes resistencia contra daño de veneno."
-]
 var ayudas = {
   nombrePersonaje: "El nombre de tu personaje, ejemplo Chicho",
   alineacion: "Tu personaje es bueno o malo?",
@@ -90,6 +75,22 @@ var ayudas = {
   piel:"El tipo o color de piel de tu personaje",
   cabello:"Recomiendo comprar shampoo barato y sin perfume. Bañate"
 };
+//Mediano
+var tipsMediano = [
+    "Suertudo: "+
+    "Cuando obtienes un 1 en una tirada de ataque,"+
+    " prueba de característica o tirada de salvación, puedes volver"+
+    " a tirar el dado y debes usar la puntuación obtenida en la nueva tirada.",
+    "Valiente: Tienes ventaja en las tiradas de salvación en contra de ser asustado.",
+    "Agilidad Mediana: Puedes moverte a través del espacio de cualquier criatura que sea de un tamaño mayor que el tuyo."
+];
+var tipsMedianoPiesLigeros = [
+  "Sigiloso por Naturaleza: Puedes intentar esconderte incluso cuando solamente estás cubierto tras una criatura que"+
+  " es al menos un tamaño mayor que tú."
+];
+var tipsMedianoFornido = [
+  "Resistencia Fornida. Tienes ventaja en tiradas de salvación contra veneno, y tienes resistencia contra daño de veneno."
+];
 var ayudaMediano = {
   //Principal
   alineacion:"Los medianos son una gente afable y alegre. Aprecian las bondades de la familia y la amistad."+
@@ -169,4 +170,29 @@ var tipsGnomo = [
   "bien iluminado, y en la oscuridad como si hubiese luz tenue. No puedes discernir colores en la "+
   "oscuridad, tan sólo formas y sombras.",
   "Astucia Gnoma: Obtienes ventaja en todas tus tiradas de salvación de Inteligencia, Sabiduría y Carisma contra magia."
-]
+];
+var tipsGnomoDelBosque = [
+  "Ilusionista natural: Conoces el truco ilusión menor. Inteligencia es tu característica para realizar el conjuro.",
+  "Hablar con las bestias pequeñas: A través de sonidos y gestos, puedes comunicar ideas simples a bestias pequeñas.",
+  "Los gnomos de los bosques aman a los animales y frecuentemente tienen ardillas, tejones, conejos, topos, "+
+  "pájaros carpinteros y otras criaturas como adoradas mascotas."
+];
+var tipsGnomoDeLaRoca = [
+  "Conocimiento de Artífice: Siempre que hagas una tirada de Inteligencia (Historia) relacionada con objetos mágicos, "+
+  "objetos alquímicos o aparatos tecnológicos, puedes añadir dos veces tu bonificación de competencia "+
+  "en lugar del bonificador de competencia que aplicarías normalmente.",
+  "Hojalatero. Obtienes competencia con herramientas de artesano (herramientas de hojalatero). "+
+  "Usando estas herramientas, puedes gastar 1 hora y 10 po en materiales para construir un artefacto "+
+  "de cuerda diminuto (CA 5, 1 PG). El artefacto deja de funcionar tras 24 horas "+
+  "(a no ser que dediques 1 hora a repararlo para mantener el artefacto en funcionamiento), o cuando usas "+
+  "tu acción para desmantelarlo, momento en el cual puedes recuperar los materiales que usaste para crearlo. "+
+  "Puedes tener hasta tres de estos artefactos activos a la vez.",
+  "Cuando creas un artefacto, escoge una de las siguientes opciones:\n"+
+  "- Juguete de Cuerda. Este juguete es un animal, monstruo o persona de cuerda, como un ratón, un pájaro, un dragón "+
+  "o un soldado. Cuando se pone en el suelo, el juguete se mueve 5 pies a través del suelo en cada uno de "+
+  "tus turnos en una dirección aleatoria. Hace ruidos apropiados a la criatura que representa.\n"+
+  "Encendedor. El artefacto produce una llama en miniatura, que puedes usar para encender una vela, antorcha "+
+  "o fuego de campamento. Usar el artefacto requiere tu acción.\n"+
+  "Caja de Música. Cuando se abre, esta caja de música interpreta una sola canción a un volumen moderado. "+
+  "La caja deja de sonar cuando llega al final de la canción o cuando se cierra."
+];

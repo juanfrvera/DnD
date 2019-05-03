@@ -197,6 +197,7 @@ function RazaCambiada(select){
   raza = select.value;
   ActualizarTips();
   CargarSubRazas();
+  CalcularSumas();
 }
 function ClaseCambiada(select){
   clase = select.value;
