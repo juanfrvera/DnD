@@ -62,6 +62,7 @@ var ayudas = {
   //Características
   destreza:"Que tan ágil eres",
   constitucion:"Que tan resistente eres",
+  inteligencia : "Eres el títere o el titiritero?",
   carisma:"Cualidad o don natural para atraer a los demás por su presencia, su palabra o su personalidad",
   //Estado
   velocidad:"Velocidad a pie, usada para calcular movimiento en los turnos",
@@ -156,6 +157,8 @@ var ayudaGnomo = {
   "su padre, el anciano del clan, sus tías y sus tíos, cada uno le pondrán al gnomo un nombre "+
   "y varios apodos y que con el tiempo algunos podrían quedarse, o no",
   alineacion:"Los gnomos poseen buen corazón e incluso aquellos que son bromistas son más juguetones que mezquinos.",
+  //Características
+  inteligencia:"Gnomos +2",
   //Equipamiento
   monedasDeOro :"Algunos gnomos se toman las aventuras como una forma rápida, aunque peligrosa, de hacerse ricos.",
   //Personalización
@@ -164,6 +167,10 @@ var ayudaGnomo = {
   altura:"Los gnomos miden de media 1 metro.",
   peso:"Los gnomos pesan entre 18 y 20 kilogramos."
 }
+var ayudaGnomoDelBosque = {
+  //Características
+  destreza : "Gnomos del bosque +1"
+};
 var tipsGnomo = [
   "Visión en la Oscuridad: Acostumbrado a vivir bajo tierra, tienes una visión superior en condiciones "+
   "de oscuridad y penumbra. Puedes ver en luz tenue dentro de 60 pies (18 m) como si estuviera "+
@@ -196,3 +203,4 @@ var tipsGnomoDeLaRoca = [
   "Caja de Música. Cuando se abre, esta caja de música interpreta una sola canción a un volumen moderado. "+
   "La caja deja de sonar cuando llega al final de la canción o cuando se cierra."
 ];
+//Semielfo
